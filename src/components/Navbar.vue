@@ -162,5 +162,10 @@ width: 60vw;
 margin: 0 auto;
 padding-bottom: 10px;
 }
+
+.navbar {
+    height: 13%;
+}
+
 }
 </style>

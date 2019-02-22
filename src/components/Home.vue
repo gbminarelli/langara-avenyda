@@ -1,87 +1,49 @@
 <template>
   <div id="home">
-    <b-container class="h-100 p-5 bg-container" id="one" fluid>
+
+    <div class="one">
+      <h1>Parking's new best friend</h1>
+      <p class="pr-5">Find convenient and affordable parking listed by locals</p>
+      <b-button class="btn1" variant="primary">FIND PARKING</b-button>
+      <b-button class="btn2" variant="outline-primary">LIST YOUR PARKING</b-button>
+    </div>
+
+
+    <b-container class="listyourp" fluid>
+      <h2 class="m-3">List your parking</h2>
+      <p class="m-3">Your home is an asset you can share to earn money when you’re away. Now your driveway is too!</p>
       <b-row>
-        
-        <b-col class="h-100">
+        <b-col>
+          <b-img src="../assets/Icons/time.svg" rounded="circle" width="95" height="95" blank-color="#ddd" alt="img" class="m-1" />
           <div>
-            <h2 class="pb-5 my-5">Parking’s new best friend</h2>
-          </div>
-          <div>
-            <p>Find convenient and affordable parking listed by locals</p>
-          </div>
-          <div>
-            <b-button href="#" variant="primary" class="mr-4">FIND PARKING</b-button>
-          </div>
-          <div>
-            <b-button href="#" variant="outline-success"> LIST YOUR PARKING</b-button>
-          </div>
-        </b-col>
-        <b-col class="h-100"></b-col>
-        <b-col class="h-100"></b-col>
-      </b-row>
-      
-    </b-container>
-    <b-container class="p-5" fluid>
-      <b-row>
-        <b-col cols="4" class="text-left">
-          <h2 class="my-5 pt-5">Parking with Avenyda</h2>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien</p>
-        </b-col>
-        <b-col>
-          <!-- <b-img right src="../assets/maps-placeholder.png" fluid alt="maps placeholder" class="pl-5"/> -->
-          <GoogleMap />
-        </b-col>
-        
-      </b-row>
-    </b-container>
-    <b-container class="p-5 bg-container" fluid>
-      <b-row>
-        <b-col cols="4" class="text-left">
-          <h2 class="my-5 pt-5">Why Avenyda?</h2>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien</p>
-        </b-col>
-        <b-col>
-          <b-img right src="../assets/more-info-placeholder.png" fluid alt="more info placeholder" class="pl-5"/>
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container class="p-5" fluid>
-      <h2 class="my-5 pb-4">List your parking</h2>
-      <b-row>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Lorem Impsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Lorem Impsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Lorem Impsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3>Easy Listing</h3>
+            <p>Apply to list a parking space in minutes</p>
           </div>
         </b-col>
       </b-row>
+        <b-row>
+          <b-col>
+            <b-img src="../assets/Icons/manage.svg" rounded="circle" width="95" height="95" blank-color="#ddd" class="m-1" />
+            <div>
+              <h3>Manage your spot</h3>
+              <p>Easily manage rates, availability and other details</p>
+            </div>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <b-img src="../assets/Icons/money.svg" rounded="circle" width="95" height="95" blank-color="#ddd" alt="img" class="m-1" />
+            <div>
+              <h3>Earn extra money</h3>
+              <p>Earn extra money without extra work</p>
+            </div>
+          </b-col>
+        </b-row>
+      <br>
+      <b-button class="btn3" variant="outline-primary">LIST YOUR PARKING</b-button>
     </b-container>
-    <b-container class="p-5 bg-container" fluid>
-      <b-row>
-        <b-col cols="4" class="text-left">
-          <h2 class="my-5 pt-5">What our custumers have to say</h2>
-        </b-col>
-        <b-col>
-          <Carousel />
-        </b-col>
-      </b-row>
-    </b-container>
+
+
   </div>
 </template>
 
@@ -107,29 +69,47 @@
 
 <style scoped>
 
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-
-  .bg-container {
-    background-color: darkgrey;
-  }
-
-  #one {
-    background-image: url("../assets/bkpic.jpg");
+  .one {
+    font-family: acumin-pro, sans-serif;
+    height: 768px;
+    background-image: url("../assets/jacly.jpg");
     background-size: cover;
-  }
-  .mb-5{
-    height: 60vh;
+    margin: auto;
+    color: white;
+    padding: 16px;
   }
 
-  .head-links div {
-    position: absolute;
-    bottom: 0px;
+  .one h1 {
+    text-align: left;
+    font-size: 50px;
   }
+
+  .one p {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .one button {
+    display: block;
+
+  }
+
+  .btn1 {
+    position: absolute;
+    left: 16px;
+    bottom: 17vh;
+  }
+
+  .btn2 {
+    position: absolute;
+    left: 16px;
+    bottom: 11vh;
+  }
+
+  .listyourp {
+    height: 100vh;
+  }
+
+
+
 </style>
