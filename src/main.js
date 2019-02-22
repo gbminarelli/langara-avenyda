@@ -11,6 +11,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import * as VueGoogleMaps from "vue2-google-maps";
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 
 Vue.use(VueGoogleMaps, {
   load: {
