@@ -8,6 +8,7 @@ import Contact from '@/components/Contact'
 import SignIn from '@/components/SignIn'
 import SignUp from '@/components/SignUp'
 import Verification from '@/components/Verification'
+import Chart from '@/components/Chart'
 
 
 Vue.use(Router)
@@ -54,6 +55,11 @@ export default new Router({
       path: '/verification',
       name: 'Verification',
       component: Verification
+    },
+    {
+      path: '/chart',
+      name: 'Chart',
+      component: Chart
     }
   ]
 })
