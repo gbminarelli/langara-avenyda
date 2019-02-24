@@ -9,6 +9,7 @@ import SignIn from '@/components/SignIn'
 import SignUp from '@/components/SignUp'
 import Verification from '@/components/Verification'
 import Chart from '@/components/Chart'
+import GetUser from '@/components/api_test/GetUser'
 
 
 Vue.use(Router)
@@ -60,6 +61,11 @@ export default new Router({
       path: '/chart',
       name: 'Chart',
       component: Chart
+    },
+    {
+      path: '/getuser',
+      name: 'GetUser',
+      component: GetUser
     }
   ]
 })
