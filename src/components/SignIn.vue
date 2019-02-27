@@ -1,6 +1,7 @@
 <template>
   <b-container id="signin" fluid>
     <b-row class="px-5" align-h="center">
+      <b-col sm="8"></b-col>
       <b-form class="p-5 my-5 text-left bform">
         <h2 class="mb-4">Sign In</h2>
         <b-form-group id="email-group"
@@ -45,13 +46,22 @@
       goSignUp(){
           this.$router.push({ name: 'SignUp'})
       }
+    },
+    created: function () {
+      this.$emit('toggleNavbar', false);
+    },
+    destroyed: function () {
+      this.$emit('toggleNavbar', true);
     }
   }
 </script>
 
 <style scoped>
   #signin {
-    background: linear-gradient(#1D3150, #3C6387, #3F5D7E);
+    background-image: url("../assets/automobile-camaro-car-1131575.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
   }
 
   .bform, a, #create-account-button {

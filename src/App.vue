@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar v-if="showNavbar"/>
+    <Navbar2 v-else/>
     <router-view @toggleNavbar="toggleNavbar"/>
     <Footer/>
   </div>
@@ -25,7 +26,7 @@ export default {
   },
   methods: {
     toggleNavbar: function(value) {
-      this.showNavbar = value;
+      // this.showNavbar = value;
     }
   }
 }
