@@ -64,6 +64,12 @@
       goSignIn(){
           this.$router.push({ name: 'SignIn'})
       }
+    },
+    created: function () {
+      this.$emit('toggleNavbar', false);
+    },
+    destroyed: function () {
+      this.$emit('toggleNavbar', true);
     }
   }
 </script>
