@@ -1,7 +1,7 @@
 <template>
    <b-navbar toggleable="lg" type="light" variant="info">
 
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+ <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
     <b-nav-item @click="goHome" class="logo-nav-a">
     <img src="../assets/Logo/logo-white.svg" alt=""  class="logo-nav">
