@@ -10,6 +10,8 @@ import SignUp from '@/components/SignUp'
 import Verification from '@/components/Verification'
 import Chart from '@/components/Chart'
 import GetUser from '@/components/api_test/GetUser'
+import FindParking from '@/components/FindParking'
+
 
 
 Vue.use(Router)
@@ -66,6 +68,12 @@ export default new Router({
       path: '/getuser',
       name: 'GetUser',
       component: GetUser
+    }
+    ,
+    {
+      path: '/findparking',
+      name: 'FindParking',
+      component: FindParking
     }
   ]
 })
