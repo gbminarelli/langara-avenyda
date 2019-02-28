@@ -113,7 +113,7 @@ export default {
 }
 .navbar,.nav-link{
     color: white !important;
-    background: #1D3150 !important;
+    /* background: #1D3150 !important; */
 }
 .bg-info{
     background: #1D3150 !important;
@@ -124,7 +124,9 @@ export default {
 .nav-pills {
     color: black;
 }
-
+nav{
+        height: 10vh;
+}
 .ml-auto p{
     margin: 0;
     text-align: start;
@@ -134,7 +136,7 @@ export default {
   }
 @media (min-width: 768px){
 .logo-nav-a{
-    width: 25%;
+    width: 20%;
     list-style: none;
 }
 }

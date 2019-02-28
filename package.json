@@ -21,6 +21,7 @@
     "chart.js": "^2.7.3",
     "now": "^14.0.0",
     "vue": "^2.5.2",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
     "vue2-google-maps": "^0.10.5"
   },
