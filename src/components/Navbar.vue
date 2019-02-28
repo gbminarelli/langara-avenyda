@@ -11,7 +11,7 @@
 
     <b-navbar-nav>
       <b-nav-item href="#">HOW IT WORKS</b-nav-item>
-      <b-nav-item href="#">FIND PARKING</b-nav-item>
+      <b-nav-item href="#" @click="goFindParking">FIND PARKING</b-nav-item>
       <b-nav-item href="#">LIST YOUR PARKING</b-nav-item>
       <b-nav-item href="#" @click="goFaqs">FAQ</b-nav-item>
 
@@ -83,6 +83,9 @@ export default {
         },
         goSignUp(){
             this.$router.push({ name: 'SignUp'})
+        },
+        goFindParking(){
+            this.$router.push({ name: 'FindParking'})
         }
     }
 }
