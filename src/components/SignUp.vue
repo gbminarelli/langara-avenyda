@@ -75,11 +75,38 @@
 </script>
 
 <style scoped>
-  #signup {
+  /* #signup {
     background-image: url("../assets/automobile-car-fine-looking-1588073.jpg");
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
+  } */
+
+  #signup:before {
+    content: "";
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    display: block;
+    background-image: url("../assets/automobile-car-fine-looking-1588073.jpg");
+    background-size:cover;
+    /* width: 110%;
+    height: 110%; */
+
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+  }
+
+  #signup {
+    overflow: auto;
+    position: relative;
   }
 
   .bform, a {
