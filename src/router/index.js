@@ -10,6 +10,7 @@ import SignUp from '@/components/SignUp'
 import Verification from '@/components/Verification'
 import Chart from '@/components/Chart'
 import GetUser from '@/components/api_test/GetUser'
+import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
 
 
@@ -68,6 +69,11 @@ export default new Router({
       path: '/getuser',
       name: 'GetUser',
       component: GetUser
+    },
+    {
+      path: '/howitworks',
+      name: 'HowItWorks',
+      component: HowItWorks
     }
     ,
     {
