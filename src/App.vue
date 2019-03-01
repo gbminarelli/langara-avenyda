@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Navbar/>
-    <router-view/>
+    <Navbar v-if="showNavbar"/>
+    <Navbar2 v-else/>
+    <router-view @toggleNavbar="toggleNavbar"/>
     <Footer/>
   </div>
 </template>
@@ -17,6 +18,16 @@ export default {
   components: {
     Navbar,
     Footer
+  },
+  data: function () {
+    return {
+      showNavbar: true
+    }
+  },
+  methods: {
+    toggleNavbar: function(value) {
+      // this.showNavbar = value;
+    }
   }
 }
 </script>

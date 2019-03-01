@@ -2,19 +2,13 @@
 <b-container fluid>
 <div class="top">
 <div class="top-text">
-  <h1>Parking's new best friend</h1>
-  <p>Find convenient and affordable parking listed by locals</p>
-  <button class="find-parking">
-    FIND PARKING
-  </button>
-  <button class="list-parking">
-    LIST YOUR PARKING
-  </button>
+  <h1>Frequently asked <br>questions</h1>
 </div>
 </div>
 
+
+<div class="bottom">
 <div role="tablist" class="questionsTable">
-  <h1>Frequently asked questions</h1>
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
         <b-btn block href="#" v-b-toggle.accordion1 variant="info">What is Avenyda?</b-btn>
@@ -55,6 +49,13 @@
       </b-collapse>
     </b-card>
   </div>
+
+  <div class="smallBox">
+    <h2>Still need help?</h2>
+    <p class="pColor">Send us an email and we'll<br> be happy to answer you!</p>
+    <button class="faqbutton">GET IN TOUCH</button>
+  </div>
+  </div>
   </b-container>
 </template>
 
@@ -83,34 +84,52 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* .faqs-img{
-    width: 45vw;
-}
-.questions{
-    margin-bottom: 100px;
-}
-.bg-container {
-    background-color: #ddd;
-  } */
 
+.smallBox{
+width: max-content;
+height: max-content;
+padding: 10px;
+margin-right: 100px;
+}
+.faqbutton{
+  background: #03E3FC;
+  color: white;
+  border: none;
+  float: left;
+}
+.pColor{
+  color: #454F63;
+  text-align: left;
+}
+h2{
+  color: #454F63;
+}
+.bottom{
 
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 .top{
 background-image: url("../assets/tyler-rutherford-1130939-unsplash.jpg");
 background-size: 100vw;
 background-repeat: no-repeat;
 width: 100%;
 padding-left: 137px;
+background-position: center;
+position: relative;
 }
 .top-text{
-  width: 35vw;
+  height: 50vh;
   padding-bottom: 7vh;
 }
 h1{
   color: white;
   font-weight: bold;
   font-size: 50px;
-  padding-top: 150px;
   text-align: left;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
 }
 p{
   color: white;
@@ -140,11 +159,7 @@ font-size: 14px;
 .card-text{
   color: #454F63;
 }
-.questionsTable{
-  width: 70vw;
-  margin-left: 139px;
 
-}
 .questionsTable h1{
   color: #454F63;
   margin-bottom: 5vh;
@@ -164,4 +179,32 @@ font-size: 14px;
   border: none;
 }
 
+
+@media (max-width: 768px){
+.smallBox{
+  margin: 0 auto;
+}
+h1{
+  padding-bottom: 3rem;
+  font-size: 2.5rem !important;
+}
+.bottom{
+  margin-top: 1rem !important;
+}
+.questionsTable{
+  width: 90%;
+  margin: 0 auto;
+}
+}
+@media (min-width: 768px){
+.bottom{
+  display:grid;
+  grid-template-columns: auto auto;
+}
+.questionsTable{
+  margin-left: 139px;
+  margin-right: 30px;
+
+}
+}
 </style>
