@@ -107,6 +107,7 @@ export default {
 <style scoped>
 #exampleInputGroup2,#exampleInput2,#exampleInputGroup1,#exampleInput1,#exampleInputGroup3,#exampleInput3,#exampleInputGroup4,#exampleInput4{
   color: white;
+  text-align: left;
 }
 h1{
     text-align: start;
