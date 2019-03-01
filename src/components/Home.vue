@@ -83,6 +83,7 @@
     height: 87vh;
     background-image: url("../assets/jacly.jpg");
     background-size: cover;
+    background-position: center;
     margin: auto;
     color: white;
     padding: 16px;
@@ -126,7 +127,7 @@
   /* Desktop View Media Screen */
   /* Temporary width 500px */
 
-  @media (min-width: 500px) {
+  @media (min-width: 768px) {
 
     
     .one {
@@ -183,6 +184,7 @@
       grid-template-columns: 139px 1fr;
       background-image: url("../assets/asphalt.jpg");
       background-size: cover;
+      background-position: center;
       object-fit: cover;
       color: white;
     }

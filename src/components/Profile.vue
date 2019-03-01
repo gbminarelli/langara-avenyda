@@ -1,82 +1,72 @@
 <template>
- <b-container class="p-5" fluid>
-      <h2 class="my-5 pb-4">Profile</h2>
-      <b-row>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Account details</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Payment methods</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Parking history</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Favorites</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-      </b-row>
 
+  <div id="one">
+    <b-container class="home" fluid>
+      <h2>Profile</h2>
+      <b-list-group>
 
-      <h2 class="my-5 pb-4">List your parking</h2>
-      <b-row>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Parking spot</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Payouts</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-        <b-col>
-          <b-img rounded="circle" blank width="250" height="250" blank-color="#ddd" alt="img" class="m-1" />
-          <div class="mb-5 px-5">
-            <h3 class="pt-4 pb-2">Dashboard</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </b-col>
-      </b-row>
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Account details</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Payment</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Parking History</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Favorites</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+      </b-list-group>
+
+      <h2>List Your Parking</h2>
+      <b-list-group>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Parking spots</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Payout methods</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Dashboard</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+        
+      </b-list-group>
     </b-container>
-   
-    
+  </div>
 
-
-    
 </template>
 
 <script>
 export default {
     name:'Profile',
     data(){
-        return{
-
-        }
+        return{}
+    },
+    methods:{
+        goHome(){
+            this.$router.push({ name: 'Home'})
+        },
     }
 }
 </script>
 
-<style>
+<style scoped>
 
+  .home {
+    height: 90vh;
+  }
+
+  h2 {
+    text-align: left;
+    color: #454F63;
+    font-weight: bold;
+    padding-top: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #454F63;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .list-group-item {
+    text-align: left;
+  }
 </style>
+
 
