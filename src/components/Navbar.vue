@@ -10,7 +10,7 @@
   <b-collapse is-nav id="nav_collapse">
 
     <b-navbar-nav>
-      <b-nav-item href="#">HOW IT WORKS</b-nav-item>
+      <b-nav-item href="#" @click="goHowItWorks">HOW IT WORKS</b-nav-item>
       <b-nav-item href="#">FIND PARKING</b-nav-item>
       <b-nav-item href="#">LIST YOUR PARKING</b-nav-item>
       <b-nav-item href="#" @click="goFaqs">FAQ</b-nav-item>
@@ -83,7 +83,10 @@ export default {
         },
         goSignUp(){
             this.$router.push({ name: 'SignUp'})
-        }
+        },
+        goHowItWorks(){
+            this.$router.push({ name: 'HowItWorks'})
+        },
     }
 }
 </script>

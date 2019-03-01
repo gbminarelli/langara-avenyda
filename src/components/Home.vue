@@ -2,10 +2,12 @@
   <div id="home">
 
     <div class="one">
-      <h1>Park anytime</h1>
-      <p class="pr-5">Find a spot whenever you want.</p>
-      <b-button class="btn1" variant="primary">FIND PARKING</b-button>
-      <b-button class="btn2" variant="outline-primary">LIST YOUR PARKING</b-button>
+      <div class="onecont">
+        <h1>Park anytime</h1>
+        <p class="pr-5">Find a spot whenever you want.</p>
+        <b-button class="btn1" variant="primary">FIND PARKING</b-button>
+        <b-button class="btn2" variant="outline-primary">LIST YOUR PARKING</b-button>
+      </div>
     </div>
 
 
@@ -78,7 +80,7 @@
 
   .one {
     font-family: acumin-pro, sans-serif;
-    height: 768px;
+    height: 87vh;
     background-image: url("../assets/jacly.jpg");
     background-size: cover;
     margin: auto;
@@ -128,25 +130,38 @@
 
     
     .one {
-      background-image: url("../assets/adult-beach.jpg")
+      background-image: url("../assets/adult-beach.jpg");
+      height: 87vh;
+      object-fit: cover;
     }
 
     .one h1 {
       margin-left: 139px;
+      color: #1D3150;
+      font-weight: bold;
     }
 
     .one p {
       margin-left: 139px;
+      color: #1D3150;
+    }
+
+    .onecont {
+      padding-top: 80px;
     }
 
     .btn1 {
       position: static;
       margin-left: 139px;
+      background-color: #03E3FC;
+      border: 0;
     }
 
     .btn2 {
       position: static;
       margin-left: 139px;
+      margin-top: 10px;
+      border-color: #03E3FC;
     }
 
     .mob { 
@@ -163,11 +178,12 @@
     /* List Your Parking Section Starts Here... */
     .listyourp {
       display: grid;
-      /* grid-template-rows:  63px 1fr 1fr 2fr 2fr 2fr 2fr 3fr; */
-      grid-template-rows:  63px 58px 83px 105px 105px 126px 47px 163px;
+      grid-template-rows:  63px 1fr 1fr 2fr 2fr 2fr 2fr 3fr;
+      /* grid-template-rows:  63px 58px 83px 105px 105px 126px 47px 163px; */
       grid-template-columns: 139px 1fr;
       background-image: url("../assets/asphalt.jpg");
       background-size: cover;
+      object-fit: cover;
       color: white;
     }
 
