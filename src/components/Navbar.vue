@@ -1,5 +1,5 @@
 <template>
-   <b-navbar toggleable="lg" type="light" variant="info">
+   <b-navbar toggleable="lg" type="light" >
 
  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -121,7 +121,7 @@ export default {
     color: white !important;
     /* background: #1D3150 !important; */
 }
-.bg-info{
+.navbar{
     background: #1D3150 !important;
 }
 .navbar-light .navbar-nav .nav-link{
@@ -173,6 +173,9 @@ padding-bottom: 10px;
 
 .navbar {
     height: 13%;
+}
+.navbar{
+    background: #1D3150 !important;
 }
 
 }

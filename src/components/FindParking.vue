@@ -29,10 +29,12 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
   name: "FindParking",
   data() {
     return {
+        storedMarkers:[],
         mapStyle: {
         styles: [
           {
@@ -206,8 +208,8 @@ export default {
 
       // default to montreal to keep it simple
       // change this to whatever makes sense
-      center: { lat: 45.508, lng: -73.587 },
-      markers: [],
+      center: { lat: 49.252, lng: -123.045 },
+      markers: [{position:{lat: 49.2519, lng: -123.043 }},{position:{lat: 49.252, lng: -123.042 }}],
       places: [],
       currentPlace: null
       
@@ -242,6 +244,17 @@ export default {
         };
       });
     }
+  },
+  created(){
+     axios
+        .get('https://wmdd-get-w5-3rlhetki8.now.sh/api/get/parkingSpot')
+        .then(response => {
+          this.storedMarkers = response
+          console.log(storedMarkers)
+        })
+        .catch(error => {
+          console.log(error)
+        })
   }
 };
 </script>
