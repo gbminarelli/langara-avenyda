@@ -1,29 +1,11 @@
 <template>
 
-  <div id="one" fluid>
+  <div id="one">
     <b-container class="home" fluid>
       <h2>Profile</h2>
       <b-list-group>
 
-
-
-
-
-        <b-list-group-item class="d-flex justify-content-between align-items-center "><b-link @click="show = !show" href="#foo" v-b-toggle.accordion1> Account Settings</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
-        
-            <!-- <b-collapse id="accordion1" visible accordion="my-accordion" role="tabpanel">
-                <b-card-body>
-                <p class="card-text">
-                    {{ text }}
-                </p>
-                </b-card-body>
-            </b-collapse> -->
-
-            <AccountDetails />
-
-
-
-
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Account details</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
 
         <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Payment</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
 
@@ -32,7 +14,6 @@
         <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Favorites</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
 
       </b-list-group>
-
 
       <h2>List Your Parking</h2>
       <b-list-group>
@@ -50,16 +31,10 @@
 </template>
 
 <script>
-
-import AccountDetails from './AccountDetails'
-
 export default {
     name:'Profile',
-    components: {
-      AccountDetails
-    },
     data(){
-        show: false
+        return{}
     },
     methods:{
         goHome(){
