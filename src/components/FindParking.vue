@@ -2,7 +2,7 @@
   <div class="map">
     <div class="searchParking">
       <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2> -->
-      <h2 v-for="marker in storedMarkers">
+      <h2 v-for="marker in storedMarkers" :key="marker.id">
         Marker with ID = {{marker.id}}: {{marker.latitud}}, {{marker.longitud}}
       </h2>
       <label>
