@@ -31,6 +31,20 @@
         })
         // .finally(() => this.loading = false)
       }
+    },
+    created(){
+
+        axios
+        .get('https://wmdd-get-w5-c90kypf2d.now.sh/api/get')
+        .then(response => {
+          this.users = response
+        })
+        .catch(error => {
+          console.log(error)
+          // this.errored = true
+        })
+        // .finally(() => this.loading = false)
+
     }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="map">
     <div class="searchParking">
-      <h2>Find a parking spot in Canada on Avenyda</h2>
+      <h2>Find a parking spot in Canada on Avenyda{{this.storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
       <label>
         <gmap-autocomplete
           @place_changed="setPlace">
@@ -34,7 +34,7 @@ export default {
   name: "FindParking",
   data() {
     return {
-        storedMarkers:[],
+        storedMarkers: [],
         mapStyle: {
         styles: [
           {
@@ -209,7 +209,7 @@ export default {
       // default to montreal to keep it simple
       // change this to whatever makes sense
       center: { lat: 49.252, lng: -123.045 },
-      markers: [{position:{lat: 49.2519, lng: -123.043 }},{position:{lat: 49.252, lng: -123.042 }}],
+      markers: [{position:{lat: 49.2519, lng: -123.043 }}],
       places: [],
       currentPlace: null
       
@@ -247,10 +247,10 @@ export default {
   },
   created(){
      axios
-        .get('https://wmdd-get-w5-3rlhetki8.now.sh/api/get/parkingSpot')
+        .get('https://wmdd-get-w5-6olro3kg3.now.sh/api/get/parkingSpot')
         .then(response => {
           this.storedMarkers = response
-          console.log(storedMarkers)
+          
         })
         .catch(error => {
           console.log(error)
