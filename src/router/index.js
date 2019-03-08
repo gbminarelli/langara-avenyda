@@ -11,8 +11,9 @@ import Verification from '@/components/Verification'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
+import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
-
+import NewSpot from '@/components/NewSpot'
 
 Vue.use(Router)
 
@@ -69,17 +70,25 @@ export default new Router({
       name: 'HowItWorks',
       component: HowItWorks
     },
-
     {
       path: '/findparking',
       name: 'FindParking',
       component: FindParking
     },
-
     {
       path: '/dashboard',
       name: '/Dashboard',
       component: Dashboard
-    }
+    },
+    {
+      path: '/reviewhome',
+      name: 'reviewHome',
+      component: reviewHome
+    },
+    {
+      path: '/newspot',
+      name: 'NewSpot',
+      component: NewSpot
+    }    
   ]
 });

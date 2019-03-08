@@ -10,6 +10,9 @@
       </div>
     </div>
 
+    <FindParking/>
+    <carousel />
+    <img src="../assets/jorge-saavedra-716885-unsplash.jpg"  class="carouselimg" alt="">
 
     <b-container class="listyourp" fluid>
       <h2 class="my-3">List your parking</h2>
@@ -51,15 +54,16 @@
         <b-button class="btn3" variant="primary">LIST YOUR PARKING</b-button>
       </div>
     </b-container>
-
-
+    <reviewHome/>
   </div>
 </template>
 
 <script>
   import CreateAccount from '@/components/CreateAccount'
   import Carousel from '@/components/Carousel'
-  import GoogleMap from "@/components/GoogleMap"
+  import FindParking from "@/components/FindParking"
+  import reviewHome from "@/components/reviewHome"
+  
 
   export default {
     name: 'Home',
@@ -71,13 +75,19 @@
     components: {
       CreateAccount,
       Carousel,
-      GoogleMap
+      FindParking,
+      reviewHome
     }
   }
 </script>
 
 <style scoped>
-
+  .carouselimg{
+    height: 500px;
+    float: right;
+    object-fit: cover;
+    width: 100vw;
+  }
   .one {
     font-family: acumin-pro, sans-serif;
     height: 87vh;
@@ -119,17 +129,24 @@
     bottom: 11vh;
   }
 
-  .listyourp {
-    height: 100vh;
-  }
+
+
 
 
   /* Desktop View Media Screen */
   /* Temporary width 500px */
 
-  @media (min-width: 768px) {
 
-    
+  @media (min-width: 600px) {
+
+
+
+    .carouselimg{
+      width: 50vw;
+    }
+      .listyourp {
+    height: 100vh;
+  }
     .one {
       background-image: url("../assets/adult-beach.jpg");
       height: 87vh;
@@ -183,8 +200,7 @@
       /* grid-template-rows:  63px 58px 83px 105px 105px 126px 47px 163px; */
       grid-template-columns: 139px 1fr;
       background-image: url("../assets/asphalt.jpg");
-      background-size: cover;
-      background-position: center;
+      background-size:cover;
       object-fit: cover;
       color: white;
     }
