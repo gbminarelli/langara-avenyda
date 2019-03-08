@@ -1,6 +1,5 @@
 <template>
   <div id="chartdiv">
-      <h2>Total Hours Booked</h2>
   </div>
 </template>
 
