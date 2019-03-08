@@ -1,19 +1,19 @@
 <template>
     <div id="app">
-        <canvas id="planet-chart"></canvas>
+        <canvas id="planet-chart3"></canvas>
     </div>
 </template>
 
 <script>
-    import Chart from 'chart.js';
-    import planetChartData from './chart-data';
+    import Chart from "chart.js";
+    import planetChartDataPie from "./chart-pie";
 
     export default {
-        name: "Chart",
+        name: "ChartPie",
         data() {
             return {
-                planetChartData: planetChartData,
-            }
+                planetChartDataPie: planetChartDataPie
+            };
         },
 
         methods: {
@@ -22,17 +22,15 @@
                 const myChart = new Chart(ctx, {
                     type: chartData.type,
                     data: chartData.data,
-                    options: chartData.options,
+                    options: chartData.options
                 });
             }
         },
 
         mounted() {
-            this.createChart('planet-chart', this.planetChartData);
+            this.createChart("planet-chart3", this.planetChartDataPie);
         }
-    }
+    };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

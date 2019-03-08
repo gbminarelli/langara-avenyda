@@ -8,11 +8,10 @@ import Contact from '@/components/Contact'
 import SignIn from '@/components/SignIn'
 import SignUp from '@/components/SignUp'
 import Verification from '@/components/Verification'
-import Chart from '@/components/Chart'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
-
+import Dashboard from '@/components/Dashboard'
 
 
 Vue.use(Router)
@@ -61,11 +60,6 @@ export default new Router({
       component: Verification
     },
     {
-      path: '/chart',
-      name: 'Chart',
-      component: Chart
-    },
-    {
       path: '/getuser',
       name: 'GetUser',
       component: GetUser
@@ -74,12 +68,18 @@ export default new Router({
       path: '/howitworks',
       name: 'HowItWorks',
       component: HowItWorks
-    }
-    ,
+    },
+
     {
       path: '/findparking',
       name: 'FindParking',
       component: FindParking
+    },
+
+    {
+      path: '/dashboard',
+      name: '/Dashboard',
+      component: Dashboard
     }
   ]
-})
+});

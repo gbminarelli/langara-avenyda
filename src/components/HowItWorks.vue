@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <h1>How It Works</h1>
+    <div id="hiw">
+        <b-container class="" fluid>
+            <b-img src="../assets/adult-car.jpg" class="pic1" fluid />
+            <h1>How Avenyda works</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </b-container>
     </div>
 </template>
 
@@ -14,6 +18,6 @@ export default {
 </script>
 
 <style scoped>
-
+    
 </style>
 
