@@ -19,7 +19,7 @@
                 </b-card-body>
             </b-collapse> -->
 
-            <!-- <AccountDetails /> -->
+            <AccountDetails />
 
 
 
