@@ -1,7 +1,10 @@
 <template>
   <div class="map">
     <div class="searchParking">
-      <h2>Find a parking spot in Canada on Avenyda</h2>
+      <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2> -->
+      <h2 v-for="marker in storedMarkers">
+        Marker with ID = {{marker.id}}: {{marker.latitud}}, {{marker.longitud}}
+      </h2>
       <label>
         <gmap-autocomplete
           @place_changed="setPlace">
@@ -15,8 +18,8 @@
     <gmap-map
       :center="center"
       :zoom="12"
-      v-bind:options="mapStyle" 
-      style="width:100%;  height: 70vh; margin-top:-5vh;" 
+      v-bind:options="mapStyle"
+      style="width:100%;  height: 70vh; margin-top:-5vh;"
     >
       <gmap-marker
         :key="index"
@@ -29,10 +32,12 @@
 </template>
 
 <script>
+const axios = require('axios');
 export default {
   name: "FindParking",
   data() {
     return {
+        storedMarkers: [],
         mapStyle: {
         styles: [
           {
@@ -206,16 +211,29 @@ export default {
 
       // default to montreal to keep it simple
       // change this to whatever makes sense
-      center: { lat: 45.508, lng: -73.587 },
-      markers: [],
+      center: { lat: 49.252, lng: -123.045 },
       places: [],
       currentPlace: null
-      
+
     };
   },
 
   mounted() {
     this.geolocate();
+  },
+
+  computed: {
+    // markers: [{position:{lat: 49.2519, lng: -123.043 }}]
+    markers: function() {
+      return this.storedMarkers.map(e => {
+        return {
+          position: {
+            lat: e.latitud,
+            lng: e.longitud
+          }
+        }
+      });
+    }
   },
 
   methods: {
@@ -242,6 +260,17 @@ export default {
         };
       });
     }
+  },
+  created(){
+     axios
+        .get('https://wmdd-get-w5-1542jkb8k.now.sh/api/get/parkingSpot')
+        .then(response => {
+          this.storedMarkers = response.data
+
+        })
+        .catch(error => {
+          console.log(error)
+        })
   }
 };
 </script>
