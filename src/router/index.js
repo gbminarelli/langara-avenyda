@@ -11,8 +11,12 @@ import Verification from '@/components/Verification'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
+<<<<<<< HEAD
 import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
+=======
+import NewSpot from '@/components/NewSpot'
+>>>>>>> aebddd18668415f52adc324dc915eda39e99eb9d
 
 
 
@@ -71,12 +75,16 @@ export default new Router({
       name: 'HowItWorks',
       component: HowItWorks
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> aebddd18668415f52adc324dc915eda39e99eb9d
     {
       path: '/findparking',
       name: 'FindParking',
       component: FindParking
     },
+<<<<<<< HEAD
 
     {
       path: '/dashboard',
@@ -88,6 +96,12 @@ export default new Router({
       path: '/reviewhome',
       name: 'reviewHome',
       component: reviewHome
+=======
+    {
+      path: '/newspot',
+      name: 'NewSpot',
+      component: NewSpot
+>>>>>>> aebddd18668415f52adc324dc915eda39e99eb9d
     }
     
   ]
