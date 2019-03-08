@@ -12,6 +12,7 @@ import Chart from '@/components/Chart'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
+import NewSpot from '@/components/NewSpot'
 
 
 
@@ -74,12 +75,16 @@ export default new Router({
       path: '/howitworks',
       name: 'HowItWorks',
       component: HowItWorks
-    }
-    ,
+    },
     {
       path: '/findparking',
       name: 'FindParking',
       component: FindParking
+    },
+    {
+      path: '/newspot',
+      name: 'NewSpot',
+      component: NewSpot
     }
   ]
 })
