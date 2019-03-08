@@ -12,6 +12,7 @@ import Chart from '@/components/Chart'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
+import reviewHome from '@/components/reviewHome'
 
 
 
@@ -81,5 +82,12 @@ export default new Router({
       name: 'FindParking',
       component: FindParking
     }
+    ,
+    {
+      path: '/reviewhome',
+      name: 'reviewHome',
+      component: reviewHome
+    }
+    
   ]
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="carouselHome">
+  <div>
     <b-carousel
       id="carousel1"
       style="text-shadow: 1px 1px 2px #333;"
@@ -7,6 +7,8 @@
       indicators
       background="#ababab"
       :interval="4000"
+      img-width="1024"
+      img-height="480"
       v-model="slide"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
@@ -31,7 +33,9 @@
       <b-carousel-slide>
         <img
           slot="img"
-          
+          class="d-block img-fluid w-100"
+          width="1024"
+          height="480"
           src="https://picsum.photos/1024/480/?image=55"
           alt="image slot"
         />
@@ -45,6 +49,11 @@
         </p>
       </b-carousel-slide>
     </b-carousel>
+
+    <p class="mt-4">
+      Slide #: {{ slide }}<br />
+      Sliding: {{ sliding }}
+    </p>
   </div>
 </template>
 
@@ -66,23 +75,3 @@
     }
   }
 </script>
-
-<style>
-.carouselHome{
-  width: 50%;
-  float: left;
-  height: 500px;
-  object-fit: cover;
-}
-.img-fluid{
-  height: 500px !important;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-.carouselHome{
-  width: 100vw;
-}
-}
-
-</style>
