@@ -11,12 +11,9 @@ import Verification from '@/components/Verification'
 import GetUser from '@/components/api_test/GetUser'
 import HowItWorks from '@/components/HowItWorks'
 import FindParking from '@/components/FindParking'
-<<<<<<< HEAD
 import reviewHome from '@/components/reviewHome'
-
-=======
 import Dashboard from '@/components/Dashboard'
->>>>>>> bcd96303fb718956b51cb5464f63247384fdb00c
+
 
 
 Vue.use(Router)

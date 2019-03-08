@@ -136,11 +136,10 @@
   /* Desktop View Media Screen */
   /* Temporary width 500px */
 
-<<<<<<< HEAD
+
   @media (min-width: 600px) {
-=======
-  @media (min-width: 768px) {
->>>>>>> bcd96303fb718956b51cb5464f63247384fdb00c
+
+
 
     .carouselimg{
       width: 50vw;
@@ -201,12 +200,7 @@
       /* grid-template-rows:  63px 58px 83px 105px 105px 126px 47px 163px; */
       grid-template-columns: 139px 1fr;
       background-image: url("../assets/asphalt.jpg");
-<<<<<<< HEAD
       background-size:cover;
-=======
-      background-size: cover;
-      background-position: center;
->>>>>>> bcd96303fb718956b51cb5464f63247384fdb00c
       object-fit: cover;
       color: white;
     }
