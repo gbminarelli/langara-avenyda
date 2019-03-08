@@ -1,23 +1,26 @@
 
 
-export const planetChartData = {
-    type: 'line',
+export const planetChartDataBar = {
+    type: 'bar',
     data: {
-        labels: ['00:00', '2:00', '4:00', '6:00', '8:00', '10:00'],
+        labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUB'],
         datasets: [
             { // one line graph
-                label: 'Number of Moons',
-                data: [45, 20, 65, 62, 27, 14],
+                
+                label: 'Total Users',
+                data: [10, 15, 8, 17, 67, 62, 27, 14],
                 backgroundColor: [
-                    'rgba(0, 255, 255, .6)', // Blue
-                //     'rgba(54,73,93,.5)',
-                //     'rgba(54,73,93,.5)',
-                //     'rgba(54,73,93,.5)',
-                //     'rgba(54,73,93,.5)',
-                //     'rgba(54,73,93,.5)',
+                    'rgb(54,73,93)', // Blue
+                    'rgba(54,73,93,.5)',
+                    'rgba(54,73,93,.5)',
+                    'rgba(54,73,93,.5)',
+                    'rgb(54,73,93)',
+                    'rgba(54,73,93,.5)',
+                    'rgba(54,73,93,.5)'
                 ],
                 borderColor: [
-                    '#00ffff',
+                    '#36495d',
+                    '#36495d',
                     '#36495d',
                     '#36495d',
                     '#36495d',
@@ -51,6 +54,6 @@ export const planetChartData = {
             }]
         }
     }
-}
+};
 
-export default planetChartData;
+export default planetChartDataBar;

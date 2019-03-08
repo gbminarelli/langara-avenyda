@@ -9,7 +9,7 @@
 
 
 
-        <b-list-group-item class="d-flex justify-content-between align-items-center "><b-link @click="show = !show" href="#foo" v-b-toggle.accordion1> Account Settings</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+        <b-list-group-item class="d-flex justify-content-between align-items-center "><b-link @click="show = !show" v-b-toggle.accordion1> Account Settings</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
         
             <!-- <b-collapse id="accordion1" visible accordion="my-accordion" role="tabpanel">
                 <b-card-body>
@@ -19,13 +19,15 @@
                 </b-card-body>
             </b-collapse> -->
 
-            <AccountDetails />
+            <!-- <AccountDetails /> -->
 
 
 
 
 
-        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Payment</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+        <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link @click="show = !show" v-b-toggle.accordion2>Payment</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
+
+        <Payment />
 
         <b-list-group-item class="d-flex justify-content-between align-items-center"><b-link href="#foo">Parking History</b-link><b-badge  variant="light"><b-img src="../assets/Icons/arrow-right.svg" /></b-badge></b-list-group-item>
 
@@ -52,11 +54,13 @@
 <script>
 
 import AccountDetails from './AccountDetails'
+import Payment from './Payment'
 
 export default {
     name:'Profile',
     components: {
-      AccountDetails
+      AccountDetails,
+      Payment
     },
     data(){
         show: false

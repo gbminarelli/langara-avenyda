@@ -1,17 +1,24 @@
 <template>
     <div id="app">
+
+        <canvas id="planet-chart2"></canvas>
         <canvas id="planet-chart"></canvas>
+
     </div>
+
+    
 </template>
 
 <script>
     import Chart from 'chart.js';
     import planetChartData from './chart-data';
+    import planetChartDataBar from './chart-bar';
 
     export default {
         name: "Chart",
         data() {
             return {
+                planetChartDataBar: planetChartDataBar,
                 planetChartData: planetChartData,
             }
         },
@@ -28,6 +35,7 @@
         },
 
         mounted() {
+            this.createChart('planet-chart2', this.planetChartDataBar);
             this.createChart('planet-chart', this.planetChartData);
         }
     }
