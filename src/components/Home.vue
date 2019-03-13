@@ -93,6 +93,7 @@
     height: 87vh;
     background-image: url("../assets/jacly.jpg");
     background-size: cover;
+    background-position: center;
     margin: auto;
     color: white;
     padding: 16px;
@@ -135,7 +136,10 @@
   /* Desktop View Media Screen */
   /* Temporary width 500px */
 
+
   @media (min-width: 600px) {
+
+
 
     .carouselimg{
       width: 50vw;
