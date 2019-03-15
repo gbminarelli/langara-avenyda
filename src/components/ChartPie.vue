@@ -33,4 +33,8 @@
     };
 </script>
 
-<style scoped></style>
+<style scoped>
+    #app {
+        background-color: white;
+    }
+</style>
