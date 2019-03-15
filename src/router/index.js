@@ -14,6 +14,7 @@ import FindParking from '@/components/FindParking'
 import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
 import NewSpot from '@/components/NewSpot'
+import ProfileB from '@/components/ProfileB'
 
 Vue.use(Router)
 
@@ -89,6 +90,11 @@ export default new Router({
       path: '/newspot',
       name: 'NewSpot',
       component: NewSpot
-    }    
+    },
+    {
+      path: '/profileb',
+      name: 'ProfileB',
+      component: ProfileB
+    }
   ]
 });

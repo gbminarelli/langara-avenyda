@@ -1,5 +1,5 @@
 <template>
-   <b-navbar toggleable="lg" type="light" >
+   <b-navbar toggleable="lg" type="light" class="sticky-top" >
 
  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -94,7 +94,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url("https://use.typekit.net/pwq4ktd.css");
 #app{
     margin-top:0;
