@@ -3,7 +3,7 @@
     <b-container class="home" fluid>
       <h2>Profile</h2>
       <b-list-group>
-        
+
         <b-list-group-item
           class="d-flex justify-content-between align-items-center "
           ><b-link @click="show = !show" v-b-toggle.accordion1>
@@ -63,6 +63,7 @@
         ></b-list-group-item>
 
         <Dashboard />
+
       </b-list-group>
     </b-container>
   </div>

@@ -46,6 +46,7 @@ export const planetChartData = {
   options: {
     responsive: true,
     lineTension: 1,
+    legend: false,
     scales: {
       yAxes: [
         {
