@@ -25,6 +25,7 @@
         :key="index"
         v-for="(m, index) in markers"
         :position="m.position"
+        :icon="{ url: require('../assets/pin.svg')}"
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>

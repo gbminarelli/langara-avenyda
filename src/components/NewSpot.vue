@@ -145,7 +145,7 @@
           <small>Help users locate your spot.</small>
           <b-form-file multiple class="my-3 text-wrap" @change="previewImage" accept="image/*" />
         </b-container>
-        <b-col class="image-preview my-4" cols="auto" v-for="(img, idx) in spotImageData" :key="img.id">
+        <b-col class="image-preview my-4" cols="auto" v-for="(img) in spotImageData" :key="img.id">
           <b-img v-bind="imageProps" rounded="circle" class="preview" :src="img" />
         </b-col>
       </b-row>
