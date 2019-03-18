@@ -18,6 +18,7 @@ import ProfileB from '@/components/ProfileB'
 import form1Parking from'@/components/form1Parking'
 import form2Parking from'@/components/form2Parking'
 import form3Parking from'@/components/form3Parking'
+import MarkerWindow from'@/components/MarkerWindow'
 
 Vue.use(Router)
 
@@ -114,6 +115,11 @@ export default new Router({
       path: '/form3parking',
       name: 'form3Parking',
       component: form3Parking
+    },
+    {
+      path: '/markerwindow',
+      name: 'MarkerWindow',
+      component: MarkerWindow
     }
   ]
 });
