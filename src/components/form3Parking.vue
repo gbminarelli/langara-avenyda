@@ -7,39 +7,12 @@
         <p>Reservation code</p>
         <p>10KV4DDS</p>
        
-      <b-row>
-        <b-col cols="4"><b-badge variant="light">Driveway</b-badge></b-col>
-        <b-col cols="8"><p>{{address}}</p></b-col>
-      </b-row>
-      <b-row>
-        <p>{{description}}</p>
-      </b-row>
-      <b-row>
-        <p>⭐⭐⭐★★</p>
-      </b-row>
 
-
-      <b-container fluid >
-  <b-row>
-    <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" />
-    </b-col>
-    <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2" />
-    </b-col>
-    <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3" />
-    </b-col>
-  </b-row>
-    </b-container>
-
-      <b-container fluid>
-        <h2>Parking features</h2>
-        <b-row><b-col><p>Light</p></b-col><b-col><p>Camera</p></b-col></b-row>
-
-        <h2>Parking Instructions</h2>
-        <p>{{parkingDescription}}</p>
-      </b-container>
+       <b-row><b-img v-bind="mainProps" rounded="circle" fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" class="user float-left" /></b-row>
+        <h3>{{name}} is your host</h3>
+        <p>Contact Host</p>
+        <b-col ><p>{{address}}</p></b-col>
+        <p>Get Directions</p>
 
 
       <b-row>
@@ -64,23 +37,14 @@
         </b-col>
       </b-row>
       </b-col>
-      <b-col cols="4">
-        <b-card-body>
-          <b-card-sub-title class="mb-2">You will pay:</b-card-sub-title>
-        <b-card-title>4.50CAD</b-card-title>
-        </b-card-body>
-      </b-col>
       </b-row>
 
 
 
         
         <b-row>
-          <b-col cols="4">
-      <b-button block type="submit" variant="danger">Cancel</b-button>
-          </b-col>
           <b-col cols="8">
-      <b-button block type="submit" variant="primary">Confirm Booking</b-button>
+      <b-button block type="submit" variant="primary">Change your booking</b-button>
           </b-col>
         </b-row>
      
@@ -138,6 +102,9 @@ padding-left: 2rem;
 .congratsIMG{
     width: 8vw;
 }
-
+.user{
+    width: 5vw;
+    height: 5vw;
+}
 </style>
 
