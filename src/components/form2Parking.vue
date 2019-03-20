@@ -4,8 +4,8 @@
         <h1>{{name}}'s Spot</h1>
        
       <b-row>
-        <b-col cols="4"><b-badge variant="light">Driveway</b-badge></b-col>
-        <b-col cols="8"><p>{{address}}</p></b-col>
+        <b-col cols="2"><b-badge variant="light">Driveway</b-badge></b-col>
+        <b-col cols="10"><p>{{address}}</p></b-col>
       </b-row>
       <b-row>
         <p>{{description}}</p>
@@ -18,17 +18,22 @@
       <b-container fluid >
   <b-row>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" />
+      <b-img  fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" />
     </b-col>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2" />
+      <b-img  fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2" />
     </b-col>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3" />
+      <b-img  fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3" />
     </b-col>
   </b-row>
     </b-container>
 
+    <b-row>
+      <p class="contactHost">Contact Host</p>
+    </b-row>
+
+<div class="backgroundCard">
       <b-container fluid>
         <h2>Parking features</h2>
         <b-row><b-col><p>Light</p></b-col><b-col><p>Camera</p></b-col></b-row>
@@ -36,8 +41,7 @@
         <h2>Parking Instructions</h2>
         <p>{{parkingDescription}}</p>
       </b-container>
-
-
+</div>
       <b-row>
       <b-col >
       <div class="mt-2">Start Parking</div>
@@ -61,7 +65,7 @@
       </b-row>
       </b-col>
       <b-col cols="4">
-        <b-card-body>
+        <b-card-body class="shadowCard">
           <b-card-sub-title class="mb-2">You will pay:</b-card-sub-title>
         <b-card-title>4.50CAD</b-card-title>
         </b-card-body>
@@ -71,7 +75,7 @@
 
 
         
-        <b-row>
+        <b-row class="btnMargin">
           <b-col cols="4">
       <b-button block type="submit" variant="danger">Cancel</b-button>
           </b-col>
@@ -91,7 +95,7 @@ name:"form2Parking",
     data() {
       return {
           name: 'Eduardo',
-          address:'1234 100th King Edward  Vancouver,BC/',
+          address:'1234 100th King Edward  Vancouver,BC',
           description:'This is a cozy room, with its own bathroom. Though the entrance to the house is shared, the position of the guest suite allows for privacy.',
           parkingDescription:'This is a cozy room, with its own bathroom. Though the entrance to the house is shared, the position of the guest suite allows for privacy.',
         form: {
@@ -131,6 +135,28 @@ name:"form2Parking",
  width: 30vw;
 padding-left: 2rem;
 }
-
+.contactHost{
+  margin: 1rem;
+  color: #00E5FF;
+  font-weight: bold;
+}
+.backgroundCard{
+  background: #EFF1F3;
+  text-align: left;
+  font-size: .8rem;
+}
+.shadowCard{
+  box-shadow: 2px 2px grey;
+  border-radius: 1rem;
+  color: #00E5FF;
+  font-weight: bold;
+}
+.btnMargin{
+  margin-top: 1rem;
+}
+h2{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
 </style>
 
