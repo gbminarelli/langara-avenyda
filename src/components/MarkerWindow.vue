@@ -8,7 +8,7 @@
       <b-col class="pr-0 pl-2">
         <p>${{price}}/hour </p>
         <p>12345 - 100th King Boulevard. Coquitlam, BC.</p>
-
+        <p>⭐⭐⭐★★</p>
       </b-col>
     </b-row>
     <b-row>

@@ -2,7 +2,7 @@
   <div class="map">
     <div class="searchParking">
       <form1Parking v-if="formFlag === 0" />
-      <form2Parking v-if="formFlag === 1"/>
+      <form2Parking v-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
       <form3Parking v-if="formFlag === 2" />
       <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
       <h2 v-for="marker in storedMarkers" :key="marker.id">
@@ -24,7 +24,7 @@
       style="width:100%;  height: 70vh; margin-top:-5vh;">
 
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-        <MarkerWindow :price="infoPrice" @book-spot="updateForm" />
+        <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
       </gmap-info-window>
 
       <gmap-marker
@@ -270,12 +270,13 @@ export default {
   },
 
   methods: {
-    updateForm: function() {
-      this.formFlag = 1;
+    updateForm: function(value = 0) {
+      this.formFlag = value;
       this.infoWinOpen = false;
       // this.currentMarker.label = "P"
     },
     toggleInfoWindow: function(marker, idx) {
+      this.formFlag = 0;
       this.currentMarker = marker;
       this.infoWindowPos = marker.position;
       this.infoPrice = marker.price;
@@ -328,17 +329,17 @@ export default {
 
 <style>
   .map{
-      position: relative;
-
+    position: relative;
   }
 
   .searchParking{
       position: absolute;
       left: 10px;
       z-index: 1;
-      height: 50vh;
-      width: 35vw;
+      height: 60vh;
+      width: 33vw;
       overflow-y: scroll;
       background: white;
+      padding: auto;
   }
 </style>

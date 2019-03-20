@@ -96,8 +96,8 @@ export default new Router({
       component: NewSpot
     },
     {
-      path: '/profileb',
-      name: 'ProfileB',
+      path: '/listparking',
+      name: 'ListParking',
       component: ProfileB
     },
     {
