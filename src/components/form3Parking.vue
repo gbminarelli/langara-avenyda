@@ -2,22 +2,26 @@
   <div class="formWidth">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-img v-bind="mainProps" rounded="circle" fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" class="congratsIMG" />
+        <div class="topText">
         <h1>Congratulations!</h1>
         <h2>Your parking is ready for you!</h2>
         <p>Reservation code</p>
         <p>10KV4DDS</p>
+        </div>
        
 
        <b-row><b-img v-bind="mainProps" rounded="circle" fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" class="user float-left" /></b-row>
+       <div class="alignleft">
         <h3>{{name}} is your host</h3>
-        <p>Contact Host</p>
-        <b-col ><p>{{address}}</p></b-col>
-        <p>Get Directions</p>
+        <p class="hostColor">Contact Host</p>
+        <b-col ><p class="underlineAddress">{{address}}</p></b-col>
+        <p class="hostColor">Get Directions</p>
+        </div>
 
 
       <b-row>
       <b-col >
-      <div class="mt-2">Start Parking</div>
+      <div class="mt-2 alignleft">Start Parking</div>
       <b-row>
         <b-col>
       <b-form-input v-model="text1" type="date" placeholder="12-03-19"/>
@@ -27,7 +31,7 @@
         </b-col>
       </b-row>
 
-      <div class="mt-2">End Parking</div>
+      <div class="mt-2 alignleft">End Parking</div>
       <b-row>
         <b-col>
       <b-form-input v-model="text1" type="date" placeholder="12-03-19" />
@@ -44,7 +48,7 @@
         
         <b-row>
           <b-col cols="8">
-      <b-button block type="submit" variant="primary">Change your booking</b-button>
+      <b-button block type="submit" variant="primary" class="btnBt">Change your booking</b-button>
           </b-col>
         </b-row>
      
@@ -105,6 +109,30 @@ padding-left: 2rem;
 .user{
     width: 5vw;
     height: 5vw;
+}
+.alignleft{
+  text-align:left;
+  margin: 0;
+}
+.btnBt{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.topText{
+  font-size: 1rem;
+  margin: 0 !important;
+}
+h1{
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1.3rem;
+}
+.underlineAddress{
+  text-decoration: underline;
+}
+.hostColor{
+  color: #00E5FF;
 }
 </style>
 
