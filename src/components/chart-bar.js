@@ -3,7 +3,7 @@
 export const planetChartDataBar = {
     type: 'bar',
     data: {
-        labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUB'],
+        labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
         datasets: [
             { // one line graph
                 

@@ -14,6 +14,8 @@ import FindParking from '@/components/FindParking'
 import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
 import NewSpot from '@/components/NewSpot'
+import RandomChart from '@/components/RandomChart'
+import ChartContainer from '@/components/ChartContainer'
 
 Vue.use(Router)
 
@@ -89,6 +91,16 @@ export default new Router({
       path: '/newspot',
       name: 'NewSpot',
       component: NewSpot
-    }    
+    },
+    {
+      path: '/test',
+      name: 'RandomChart',
+      component: RandomChart
+    },
+    {
+      path: '/tst',
+      name: 'ChartContainer',
+      component: ChartContainer
+    }
   ]
 });
