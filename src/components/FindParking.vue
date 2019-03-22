@@ -1,7 +1,10 @@
 <template>
   <div class="map">
-    <!-- <div class="searchParking">
-      <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
+    <div class="searchParking">
+      <form1Parking v-if="formFlag === 0" />
+      <form2Parking v-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
+      <form3Parking v-if="formFlag === 2" />
+      <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
       <h2 v-for="marker in storedMarkers" :key="marker.id">
         Marker with ID = {{marker.id}}: {{marker.latitud}}, {{marker.longitud}}
       </h2>
@@ -11,9 +14,8 @@
         </gmap-autocomplete>
         <button @click="">Add</button>
       </label>
-      <br/>
-
-    </div> -->
+      <br/> -->
+    </div>
     <br>
     <gmap-map
       :center="center"
@@ -22,10 +24,7 @@
       style="width:100%;  height: 70vh; margin-top:-5vh;">
 
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-        <MarkerWindow :price="infoPrice" />
-        <!-- <div class="">
-          {{infoPrice}}
-        </div> -->
+        <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
       </gmap-info-window>
 
       <gmap-marker
@@ -35,6 +34,7 @@
         :icon="{ url: require('../assets/pin.svg')}"
         :clickable="true"
         :price="m.price"
+        :label="m.label"
         @click="toggleInfoWindow(m,index)"
       ></gmap-marker>
     </gmap-map>
@@ -43,15 +43,23 @@
 
 <script>
 import MarkerWindow from '@/components/MarkerWindow'
+import form1Parking from '@/components/form1Parking'
+import form2Parking from '@/components/form2Parking'
+import form3Parking from '@/components/form3Parking'
 const axios = require('axios');
 export default {
   name: "FindParking",
   components: {
-    MarkerWindow
+    MarkerWindow,
+    form1Parking,
+    form2Parking,
+    form3Parking
   },
   data() {
     return {
       storedMarkers: [],
+      currentMarker: null,
+      formFlag: 0,
       mapStyle: {
         styles: [
         {
@@ -245,28 +253,31 @@ export default {
   computed: {
     markers: function() {
       return this.storedMarkers.map(e => {
+        let price = Math.floor(Math.random() * (500 - 100) + 100) / 100;
         return {
           position: {
             lat: e.latitud,
             lng: e.longitud
           },
-          // label: {
-          //   color: 'white',
-          //   fontWeight: 'bold',
-          //   text: 'Hello world',
-          // },
-          price: Math.floor(Math.random() * (500 - 100) + 100) / 100
-          // price: Math.floor(Math.random()*(3)+1)
-          // price: Math.floor(Math.random()*(max-min+1)+min)
-          // infoText: `Marker at position: ${e.latitud}, ${e.longitud}`,
-          // label: 'A'
+          label: {
+            text: `${price}`,
+            fontSize: "1rem"
+          },
+          price: price
         }
       });
     }
   },
 
   methods: {
+    updateForm: function(value = 0) {
+      this.formFlag = value;
+      this.infoWinOpen = false;
+      // this.currentMarker.label = "P"
+    },
     toggleInfoWindow: function(marker, idx) {
+      this.formFlag = 0;
+      this.currentMarker = marker;
       this.infoWindowPos = marker.position;
       this.infoPrice = marker.price;
       if (this.currentMidx == idx) {
@@ -302,7 +313,6 @@ export default {
     }
   },
   created(){
-    // console.log(this.center);
      axios
         .get('https://wmdd-get-w5-1542jkb8k.now.sh/api/get/parkingSpot')
         .then(response => {
@@ -318,17 +328,18 @@ export default {
 
 
 <style>
-.map{
+  .map{
     position: relative;
+  }
 
-}
-.searchParking{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-bottom: 20vh;
-    z-index: 1;
-    width: 30vw;
-    background: white;
-}
+  .searchParking{
+      position: absolute;
+      left: 10px;
+      z-index: 1;
+      height: 60vh;
+      width: 33vw;
+      overflow-y: scroll;
+      background: white;
+      padding: auto;
+  }
 </style>

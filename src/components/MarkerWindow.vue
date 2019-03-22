@@ -8,12 +8,12 @@
       <b-col class="pr-0 pl-2">
         <p>${{price}}/hour </p>
         <p>12345 - 100th King Boulevard. Coquitlam, BC.</p>
-
+        <p>⭐⭐⭐★★</p>
       </b-col>
     </b-row>
     <b-row>
       <b-col class="px-0">
-        <b-button block variant="primary">BOOK THIS SPOT</b-button>
+        <b-button block variant="primary" @click="updateForm">BOOK THIS SPOT</b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -25,6 +25,11 @@ export default {
   data(){
     return{
       imageProps: { width: 200, height: 200 }
+    }
+  },
+  methods: {
+    updateForm: function() {
+      this.$emit('book-spot');
     }
   },
   props: {

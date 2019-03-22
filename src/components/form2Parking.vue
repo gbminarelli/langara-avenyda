@@ -2,7 +2,7 @@
   <div class="formWidth">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <h1>{{name}}'s Spot</h1>
-       
+
       <b-row>
         <b-col cols="2"><b-badge variant="light">Driveway</b-badge></b-col>
         <b-col cols="10"><p>{{address}}</p></b-col>
@@ -74,16 +74,16 @@
 
 
 
-        
+
         <b-row class="btnMargin">
           <b-col cols="4">
       <b-button block type="submit" variant="danger">Cancel</b-button>
           </b-col>
           <b-col cols="8">
-      <b-button block type="submit" variant="primary">Confirm Booking</b-button>
+      <b-button block type="submit" variant="primary" @click="confirmBooking">Confirm Booking</b-button>
           </b-col>
         </b-row>
-     
+
     </b-form>
   </div>
 </template>
@@ -109,9 +109,12 @@ name:"form2Parking",
       }
     },
     methods: {
+      confirmBooking() {
+        this.$emit('confirm-spot');
+      },
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        // alert(JSON.stringify(this.form))
       },
       onReset(evt) {
         evt.preventDefault()
@@ -159,4 +162,3 @@ h2{
   font-weight: bold;
 }
 </style>
-
