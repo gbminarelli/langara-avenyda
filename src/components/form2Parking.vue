@@ -47,20 +47,20 @@
       <div class="mt-2">Start Parking</div>
       <b-row>
         <b-col>
-      <b-form-input type="date" placeholder="12-03-19"/>
+      <b-form-input v-model="text1" type="date" placeholder="12-03-19"/>
         </b-col>
         <b-col cols="5">
-      <b-form-input type="time" placeholder="Time"/>
+      <b-form-input v-model="text1" type="time" placeholder="Time"/>
         </b-col>
       </b-row>
 
       <div class="mt-2">End Parking</div>
       <b-row>
         <b-col>
-      <b-form-input type="date" placeholder="12-03-19" />
+      <b-form-input v-model="text1" type="date" placeholder="12-03-19" />
         </b-col>
         <b-col cols="5">
-      <b-form-input type="time" placeholder="Time" />
+      <b-form-input v-model="text1" type="time" placeholder="Time" />
         </b-col>
       </b-row>
       </b-col>
@@ -80,7 +80,7 @@
       <b-button block type="submit" variant="danger">Cancel</b-button>
           </b-col>
           <b-col cols="8">
-      <b-button block type="submit" variant="primary" @click="updateForm">Confirm Booking</b-button>
+      <b-button block type="submit" variant="primary" @click="confirmBooking">Confirm Booking</b-button>
           </b-col>
         </b-row>
 
@@ -109,7 +109,7 @@ name:"form2Parking",
       }
     },
     methods: {
-      updateForm: function() {
+      confirmBooking() {
         this.$emit('confirm-spot');
       },
       onSubmit(evt) {
