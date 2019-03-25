@@ -135,8 +135,10 @@ name:"form2Parking",
 
 <style scoped>
 .formWidth{
- width: 30vw;
+  width: 80vw;
 padding-left: 2rem;
+ margin-bottom: 2rem;
+  padding: 1rem!important;
 }
 .contactHost{
   margin: 1rem;
@@ -160,5 +162,10 @@ padding-left: 2rem;
 h2{
   font-size: 1.3rem;
   font-weight: bold;
+}
+
+ @media (min-width: 800px) {
+   .formWidth{
+ width: 30vw;}
 }
 </style>

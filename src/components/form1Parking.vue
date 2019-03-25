@@ -19,7 +19,7 @@
       >
         <b-form-input
           id="exampleInput1"
-          type="email"
+          type="text"
           v-model="form.email"
           required
           placeholder="eg: city, street name, postal code" />
@@ -131,7 +131,8 @@ name:"form1Parking",
 
 <style scoped>
 .formWidth{
- width: 30vw;
+ width: 80vw;
+ padding: 1rem!important;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
   background-color: red !important;
@@ -154,5 +155,9 @@ h1{
   width: 150px;
 }
 
+ @media (min-width: 1000px) {
+   .formWidth{
+ width: 30vw;}
+}
 </style>
 

@@ -100,8 +100,9 @@ name:"form3Parking",
 
 <style scoped>
 .formWidth{
- width: 30vw;
+ width: 85vw;
 padding-left: 2rem;
+ padding: 1rem!important;
 }
 .congratsIMG{
     width: 8vw;
@@ -109,6 +110,7 @@ padding-left: 2rem;
 .user{
     width: 5vw;
     height: 5vw;
+     margin-left: 1rem;
 }
 .alignleft{
   text-align:left;
@@ -133,6 +135,11 @@ h2{
 }
 .hostColor{
   color: #00E5FF;
+}
+
+@media (min-width: 900px) {
+   .formWidth{
+ width: 30vw;}
 }
 </style>
 

@@ -21,7 +21,7 @@
       :center="center"
       :zoom="18"
       v-bind:options="mapStyle"
-      style="width:100%;  height: 70vh; margin-top:-5vh;">
+      style="width:100%;  height: 90vh; margin-top:-5vh;">
 
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
@@ -336,10 +336,26 @@ export default {
       position: absolute;
       left: 10px;
       z-index: 1;
-      height: 60vh;
-      width: 33vw;
+
       overflow-y: scroll;
       background: white;
-      padding: auto;
+      margin: 2rem;
+      justify-items: center !important;
   }
+
+  @media (min-width: 1000px) {
+      .searchParking{
+        width: 33vw;
+      }
+
+  }
+
+  @media (max-width: 900px) {
+    .vue-map-container{
+      height: 130vh !important;
+    }
+  }
+
+
+  /* vue-map-container */
 </style>

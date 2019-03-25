@@ -41,4 +41,8 @@ export default {
     color: #1D3150;
     /* margin-top: 60px; */
   }
+
+  .w-100{
+    height: 500px !important;
+  }
 </style>
