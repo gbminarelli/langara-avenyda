@@ -28,10 +28,15 @@
       </gmap-info-window>
 
       <gmap-marker
+        :animation="2"
         :key="index"
+        ref="markers"
         v-for="(m, index) in markers"
         :position="m.position"
-        :icon="{ url: require('../assets/pin.svg')}"
+        :icon="{
+          labelOrigin: {x: 37, y: 28},
+          url: require('../assets/pin.svg')
+        }"
         :clickable="true"
         :price="m.price"
         :label="m.label"
@@ -248,6 +253,8 @@ export default {
   mounted() {
     // Removing geolocation for the presentation.
     // this.geolocate();
+    // window.setTimeout(window.alert, 2000);
+
   },
 
   computed: {
@@ -261,7 +268,9 @@ export default {
           },
           label: {
             text: `${price}`,
-            fontSize: "1rem"
+            fontSize: "0.9rem",
+            // color: "rgba(0, 0, 0, 0)"
+            color: "#333"
           },
           price: price
         }
@@ -276,6 +285,8 @@ export default {
       // this.currentMarker.label = "P"
     },
     toggleInfoWindow: function(marker, idx) {
+      // this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
+      this.hideLabel(idx);
       this.formFlag = 0;
       this.currentMarker = marker;
       this.infoWindowPos = marker.position;
@@ -287,6 +298,20 @@ export default {
         this.infoWinOpen = true;
         this.currentMidx = idx;
       }
+    },
+    hideLabel(idx) {
+      this.storedMarkers.forEach((e, i) => {
+        if (i === idx) {
+          // this.$refs.markers[i].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
+          this.$refs.markers[i].$markerObject.label.color = "rgba(0, 0, 0, 0)";
+        // } else if (this.$refs.markers[i].$markerObject.animation === 1) {
+        } else {
+          // this.$refs.markers[i].$markerObject.setAnimation(google.maps.Animation.DROP);
+          // console.log(this.$refs.markers[i].$markerObject);
+          // this.$refs.markers[i].$markerObject.setAnimation();
+          this.$refs.markers[i].$markerObject.label.color = "#333";
+        }
+      })
     },
     setPlace(place) {
       this.currentPlace = place;
@@ -302,6 +327,8 @@ export default {
         this.center = marker;
         this.currentPlace = null;
       }
+
+
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
@@ -316,8 +343,14 @@ export default {
      axios
         .get('https://wmdd-get-w5-1542jkb8k.now.sh/api/get/parkingSpot')
         .then(response => {
-          this.storedMarkers = response.data
-
+          this.storedMarkers = response.data;
+          response.data.forEach((e, i) => {
+            window.setTimeout(function() {
+              // this.storedMarkers.push(e);
+              // this.storedMarkers[i] = e;
+              // console.log(typeof this.storedMarkers);
+            }, i*200);
+          });
         })
         .catch(error => {
           console.error(error)
@@ -341,5 +374,9 @@ export default {
       overflow-y: scroll;
       background: white;
       padding: auto;
+  }
+
+  .label {
+    color: red;
   }
 </style>
