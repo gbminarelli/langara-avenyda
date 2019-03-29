@@ -2,33 +2,19 @@
   <div class="map">
     <div class="searchParking">
       <form1Parking v-if="formFlag === 0" />
-      <form2Parking v-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
-      <form3Parking v-if="formFlag === 2" />
-      <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
-      <h2 v-for="marker in storedMarkers" :key="marker.id">
-        Marker with ID = {{marker.id}}: {{marker.latitud}}, {{marker.longitud}}
-      </h2>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="">Add</button>
-      </label>
-      <br/> -->
+      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
+      <form3Parking v-else-if="formFlag === 2" />
     </div>
-    <br>
     <gmap-map
       :center="center"
       :zoom="18"
       v-bind:options="mapStyle"
-      style="width:100%;  height: 70vh; margin-top:-5vh;">
-
+      style="width:100%;  height: 90vh;">
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
       </gmap-info-window>
-
       <gmap-marker
-        :animation="2"
+        :animation="0"
         :key="index"
         ref="markers"
         v-for="(m, index) in markers"
@@ -286,18 +272,14 @@ export default {
     },
     toggleInfoWindow: function(marker, idx) {
       // this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
+      this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.DROP);
       this.hideLabel(idx);
       this.formFlag = 0;
       this.currentMarker = marker;
       this.infoWindowPos = marker.position;
       this.infoPrice = marker.price;
-      if (this.currentMidx == idx) {
-        this.infoWinOpen = !this.infoWinOpen;
-      }
-      else {
-        this.infoWinOpen = true;
-        this.currentMidx = idx;
-      }
+      this.infoWinOpen = true;
+      this.currentMidx = idx;
     },
     hideLabel(idx) {
       this.storedMarkers.forEach((e, i) => {
@@ -361,19 +343,22 @@ export default {
 
 
 <style>
-  .map{
+  .map {
     position: relative;
   }
 
-  .searchParking{
-      position: absolute;
-      left: 10px;
-      z-index: 1;
-      height: 60vh;
-      width: 33vw;
-      overflow-y: scroll;
-      background: white;
-      padding: auto;
+  .searchParking {
+    position: absolute;
+    /* left: 10px;
+    top:10px; */
+    z-index: 1;
+    /* height: 80vh; */
+    width: 500px;
+    /* width: 35vw; */
+    overflow-y: scroll;
+    background: white;
+    padding-left: 12px;
+    /* padding: auto; */
   }
 
   .label {
