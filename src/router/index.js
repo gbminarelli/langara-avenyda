@@ -16,6 +16,7 @@ import Dashboard from '@/components/Dashboard'
 import NewSpot from '@/components/NewSpot'
 import RandomChart from '@/components/RandomChart'
 import ChartContainer from '@/components/ChartContainer'
+import Chartkick from '@/components/Chartkick'
 
 Vue.use(Router)
 
@@ -101,6 +102,11 @@ export default new Router({
       path: '/tst',
       name: 'ChartContainer',
       component: ChartContainer
+    },
+    {
+      path: '/chartkick',
+      name: 'Chartkick',
+      component: Chartkick
     }
   ]
 });

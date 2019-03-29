@@ -20,7 +20,8 @@
     async mounted () {
       this.loaded = false
       try {
-        const { userlist } = await fetch('https://wmdd-get-w5-1542jkb8k.now.sh/api/get/parkingSpot')
+        const { userlist } = await fetch('https://testserver.iamharmangill.now.sh/api/get/getDay')
+        
         this.chartData = userlist
         this.loaded = true
       } catch (e) {
