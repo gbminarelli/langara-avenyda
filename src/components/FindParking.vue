@@ -2,36 +2,27 @@
   <div class="map">
     <div class="searchParking">
       <form1Parking v-if="formFlag === 0" />
-      <form2Parking v-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
-      <form3Parking v-if="formFlag === 2" />
-      <!-- <h2>Find a parking spot in Canada on Avenyda {{storedMarkers.data[0].latitud}} {{storedMarkers.data[0].longitud}}</h2>
-      <h2 v-for="marker in storedMarkers" :key="marker.id">
-        Marker with ID = {{marker.id}}: {{marker.latitud}}, {{marker.longitud}}
-      </h2>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click="">Add</button>
-      </label>
-      <br/> -->
+      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
+      <form3Parking v-else-if="formFlag === 2" />
     </div>
-    <br>
     <gmap-map
       :center="center"
       :zoom="18"
       v-bind:options="mapStyle"
-      style="width:100%;  height: 90vh; margin-top:-5vh;">
-
+      style="width:100%;  height: 90vh;">
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
       </gmap-info-window>
-
       <gmap-marker
+        :animation="0"
         :key="index"
+        ref="markers"
         v-for="(m, index) in markers"
         :position="m.position"
-        :icon="{ url: require('../assets/pin.svg')}"
+        :icon="{
+          labelOrigin: {x: 37, y: 28},
+          url: require('../assets/pin.svg')
+        }"
         :clickable="true"
         :price="m.price"
         :label="m.label"
@@ -248,6 +239,8 @@ export default {
   mounted() {
     // Removing geolocation for the presentation.
     // this.geolocate();
+    // window.setTimeout(window.alert, 2000);
+
   },
 
   computed: {
@@ -261,7 +254,9 @@ export default {
           },
           label: {
             text: `${price}`,
-            fontSize: "1rem"
+            fontSize: "0.9rem",
+            // color: "rgba(0, 0, 0, 0)"
+            color: "#333"
           },
           price: price
         }
@@ -276,17 +271,29 @@ export default {
       // this.currentMarker.label = "P"
     },
     toggleInfoWindow: function(marker, idx) {
+      // this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
+      this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.DROP);
+      this.hideLabel(idx);
       this.formFlag = 0;
       this.currentMarker = marker;
       this.infoWindowPos = marker.position;
       this.infoPrice = marker.price;
-      if (this.currentMidx == idx) {
-        this.infoWinOpen = !this.infoWinOpen;
-      }
-      else {
-        this.infoWinOpen = true;
-        this.currentMidx = idx;
-      }
+      this.infoWinOpen = true;
+      this.currentMidx = idx;
+    },
+    hideLabel(idx) {
+      this.storedMarkers.forEach((e, i) => {
+        if (i === idx) {
+          // this.$refs.markers[i].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
+          this.$refs.markers[i].$markerObject.label.color = "rgba(0, 0, 0, 0)";
+        // } else if (this.$refs.markers[i].$markerObject.animation === 1) {
+        } else {
+          // this.$refs.markers[i].$markerObject.setAnimation(google.maps.Animation.DROP);
+          // console.log(this.$refs.markers[i].$markerObject);
+          // this.$refs.markers[i].$markerObject.setAnimation();
+          this.$refs.markers[i].$markerObject.label.color = "#333";
+        }
+      })
     },
     setPlace(place) {
       this.currentPlace = place;
@@ -302,6 +309,8 @@ export default {
         this.center = marker;
         this.currentPlace = null;
       }
+
+
     },
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
@@ -316,8 +325,14 @@ export default {
      axios
         .get('https://wmdd-get-w5-1542jkb8k.now.sh/api/get/parkingSpot')
         .then(response => {
-          this.storedMarkers = response.data
-
+          this.storedMarkers = response.data;
+          response.data.forEach((e, i) => {
+            window.setTimeout(function() {
+              // this.storedMarkers.push(e);
+              // this.storedMarkers[i] = e;
+              // console.log(typeof this.storedMarkers);
+            }, i*200);
+          });
         })
         .catch(error => {
           console.error(error)
@@ -328,26 +343,26 @@ export default {
 
 
 <style>
-  .map{
+  .map {
     position: relative;
   }
 
-  .searchParking{
-      position: absolute;
-      left: 10px;
-      z-index: 1;
-
-      overflow-y: scroll;
-      background: white;
-      margin: 2rem;
-      justify-items: center !important;
+  .searchParking {
+    position: absolute;
+    /* left: 10px;
+    top:10px; */
+    z-index: 1;
+    /* height: 80vh; */
+    width: 500px;
+    /* width: 35vw; */
+    overflow-y: scroll;
+    background: white;
+    padding-left: 12px;
+    /* padding: auto; */
   }
 
-  @media (min-width: 1000px) {
-      .searchParking{
-        width: 33vw;
-      }
-
+  .label {
+    color: red;
   }
 
   @media (max-width: 900px) {
