@@ -2,8 +2,8 @@
   <div class="map">
     <div class="searchParking">
       <form1Parking v-if="formFlag === 0" />
-      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)"/>
-      <form3Parking v-else-if="formFlag === 2" />
+      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)" @datetime="updateDatetime"/>
+      <form3Parking v-else-if="formFlag === 2" :datetime="datetime" />
     </div>
     <gmap-map
       :center="center"
@@ -48,6 +48,7 @@ export default {
   },
   data() {
     return {
+      datetime: null,
       storedMarkers: [],
       currentMarker: null,
       formFlag: 0,
@@ -270,6 +271,9 @@ export default {
       this.infoWinOpen = false;
       // this.currentMarker.label = "P"
     },
+    updateDatetime: function(value) {
+      this.datetime = value;      
+    },
     toggleInfoWindow: function(marker, idx) {
       // this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.BOUNCE);
       this.$refs.markers[idx].$markerObject.setAnimation(google.maps.Animation.DROP);
@@ -342,7 +346,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
   .map {
     position: relative;
   }
@@ -352,10 +356,10 @@ export default {
     /* left: 10px;
     top:10px; */
     z-index: 1;
-    /* height: 80vh; */
-    width: 500px;
+    max-height: 90vh;
+    width: 520px;
     /* width: 35vw; */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     background: white;
     padding-left: 12px;
     /* padding: auto; */
