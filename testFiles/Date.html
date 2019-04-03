@@ -1,0 +1,201 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/vue-chartkick@0.5.0"></script>
+</head>
+
+<body>
+    <h1>Counters</h1>
+
+    <div id="myId">
+        <line-chart :data="[['Jan', this.zero], ['Feb', this.oTwo], ['Mar', this.oThree], ['Apr', 5], ['May', 3]]"></line-chart>
+        <!-- <line-chart :data="chartData"></line-chart> -->
+        <p> 00 : {{ zero }} </p>
+        <p> 01 : {{ one }} </p>
+        <p> 02 : {{ two }} </p>
+        <p> 03 : {{ three }} </p>
+        <p> 04 : {{ four }} </p>
+        <p> 05 : {{ five }} </p>
+        <p> 06 : {{ six }} </p>
+        <p> 07 : {{ seven }} </p>
+        <p> 08 : {{ eight }} </p>
+        <p> 09 : {{ nine }} </p>
+        <p> 10 : {{ oZero }} </p>
+        <p> 11 : {{ oOne }} </p>
+        <p> 12 : {{ oTwo }} </p>
+        <p> 13 : {{ oThree }} </p>
+        <p> 14 : {{ oFour }} </p>
+        <p> 15 : {{ oFive }} </p>
+        <p> 16 : {{ oSix }} </p>
+        <p> 17 : {{ oSeven }} </p>
+        <p> 18 : {{ oEight }} </p>
+        <p> 19 : {{ oNine }} </p>
+        <p> 20 : {{ tZero }} </p>
+        <p> 21 : {{ tOne }} </p>
+        <p> 22 : {{ tTwo }} </p>
+        <p> 23 : {{ tThree }} </p>
+    </div>
+
+</body>
+
+<script>
+    var vm = new Vue({
+        el: '#myId',
+        data: {
+            // chartData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
+            status: '',
+            zero: 0,
+            one: 0,
+            two: 0,
+            three: 0,
+            four: 0,
+            five: 0,
+            six: 0,
+            seven: 0,
+            eight: 0,
+            nine: 0,
+            oZero: 0,
+            oOne: 0,
+            oTwo: 0,
+            oThree: 0,
+            oFour: 0,
+            oFive: 0,
+            oSix: 0,
+            oSeven: 0,
+            oEight: 0,
+            oNine: 0,
+            tZero: 0,
+            tOne: 0,
+            tTwo: 0,
+            tThree: 0
+        },
+
+        created: function () {
+            this.loadData();
+        },
+
+        methods: {
+            loadData: function () {
+                this.status = 'Loading...';
+                var vm = this;
+                axios.get('https://testserver.iamharmangill.now.sh/api/get/getDay')
+                    .then((response) => {
+                        info = response.data
+                        console.log(info)
+                        // converts json to a string
+                        var my = JSON.stringify(info);
+
+                        // splits the json according to the sign
+                        var sp = my.split('"');
+                        console.log(sp);
+                        console.log(sp.length)
+                        console.log("Date Selection Begins....")
+
+
+                        // prints date element from array
+                        var j = 3;
+                        while (j <= sp.length) {
+                            console.log(sp[j]);
+                            hr(sp[j])
+                            j = j + 4;
+                        }
+                        
+                        // getting hours from UTC Date
+                        function hr(p) {
+                            var hr = new Date(p)
+                            utcHours = hr.getUTCHours()
+                            console.log(utcHours)
+
+
+                            //Counters....
+                            if (utcHours == '1') {
+                                vm.one++;
+                            }
+                            if (utcHours == '2') {
+                                vm.two++;
+                            }
+                            if (utcHours == '3') {
+                                vm.three++;
+                            }
+                            if (utcHours == '4') {
+                                vm.four++;
+                            }
+                            if (utcHours == '5') {
+                                vm.five++;
+                            }
+                            if (utcHours == '6') {
+                                vm.six++;
+                            }
+                            if (utcHours == '7') {
+                                vm.seven++;
+                            }
+                            if (utcHours == '8') {
+                                vm.eight++;
+                            }
+                            if (utcHours == '9') {
+                                vm.nine++;
+                            }
+                            if (utcHours == '10') {
+                                vm.oZero++;
+                            }
+                            if (utcHours == '11') {
+                                vm.oOne++;
+                            }
+                            if (utcHours == '12') {
+                                vm.oTwo++;
+                            }
+                            if (utcHours == '13') {
+                                vm.oThree++;
+                            }
+                            if (utcHours == '14') {
+                                vm.oFour++;
+                            }
+                            if (utcHours == '15') {
+                                vm.oFive++;
+                            }
+                            if (utcHours == '16') {
+                                vm.oSix++;
+                            }
+                            if (utcHours == '17') {
+                                vm.oSeven++;
+                            }
+                            if (utcHours == '18') {
+                                vm.oEight++;
+                            }
+                            if (utcHours == '19') {
+                                vm.oNine++;
+                            }
+                            if (utcHours == '20') {
+                                vm.tZero++;
+                            }
+                            if (utcHours == '21') {
+                                vm.tOne++;
+                                // var a = vm.tOne
+                            }
+                            if (utcHours == '22') {
+                                vm.tTwo++;
+                            }
+                            if (utcHours == '23') {
+                                vm.tThree++;
+                            }
+                            if (utcHours == '0') {
+                                vm.zero++;
+                            }
+
+                        }
+                    }).catch((err) => {
+                        vm.status = 'An error occurred' + err
+                    });
+            },
+        }
+    });
+</script>
+
+</html>

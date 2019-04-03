@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="114.121" height="80.043" viewBox="0 0 114.121 80.043">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.102" y1="1.072" x2="0.901" y2="-0.068" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2c4c6c"/>
+      <stop offset="0.47" stop-color="#285275"/>
+      <stop offset="0.74" stop-color="#1b3958"/>
+      <stop offset="1" stop-color="#112540"/>
+    </linearGradient>
+  </defs>
+  <g id="verification_email" data-name="verification email" transform="translate(-626 -368.458)">
+    <g id="Artwork_4" data-name="Artwork 4" transform="translate(683.06 408.48)">
+      <path id="Path_854" data-name="Path 854" d="M104.1,80.043H10.023A10.023,10.023,0,0,1,0,70.02v-60C0,7.039.839,5.128,2.517,4.359,6.084,2.7,11.748,7.3,12.564,7.948l44.45,30.838L96.452,11.351a1.005,1.005,0,1,1,1.142,1.655L57.573,40.837a1,1,0,0,1-1.165,0L11.375,9.6l-.07-.047C9.23,7.785,5.221,5.338,3.38,6.2,2.261,6.713,2,8.554,2,10.023V70a8.018,8.018,0,0,0,8.018,7.995H104.1A8.018,8.018,0,0,0,112.116,70V10.023A8.018,8.018,0,0,0,104.1,2H23.262a1,1,0,1,1,0-2H104.1a10.023,10.023,0,0,1,10.023,10.023V70A10.023,10.023,0,0,1,104.1,80.02Zm0,0" transform="translate(-57.06 -40.021)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

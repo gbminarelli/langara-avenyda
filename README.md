@@ -1,6 +1,6 @@
 # avenyda
 
-> A Vue.js project
+> A Vue.js project.
 
 ## Build Setup
 

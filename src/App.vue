@@ -1,35 +1,44 @@
 <template>
   <div id="app">
-    <Navbar/>
-    <img class="logo" src="./assets/logo.png">
-    <router-view/>
+    <Navbar v-if="showNavbar"/>
+    <Navbar2 v-else/>
+    <router-view @toggleNavbar="toggleNavbar"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Footer
+  },
+  data: function () {
+    return {
+      showNavbar: true
+    }
+  },
+  methods: {
+    toggleNavbar: function(value) {
+      // this.showNavbar = value;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.logo{
-  width: 45%;
-  margin: 0;
-}
+  #app {
+    font-family: acumin-pro, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #1D3150;
+    margin-top: 60px;
+  }
 </style>
