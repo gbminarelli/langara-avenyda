@@ -14,9 +14,6 @@ import FindParking from '@/components/FindParking'
 import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
 import NewSpot from '@/components/NewSpot'
-import RandomChart from '@/components/RandomChart'
-import ChartContainer from '@/components/ChartContainer'
-import Chartkick from '@/components/Chartkick'
 
 Vue.use(Router)
 
@@ -93,20 +90,5 @@ export default new Router({
       name: 'NewSpot',
       component: NewSpot
     },
-    {
-      path: '/test',
-      name: 'RandomChart',
-      component: RandomChart
-    },
-    {
-      path: '/tst',
-      name: 'ChartContainer',
-      component: ChartContainer
-    },
-    {
-      path: '/chartbar',
-      name: 'ChartBar',
-      component: ChartBar
-    }
   ]
 });
