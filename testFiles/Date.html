@@ -15,8 +15,8 @@
     <h1>Counters</h1>
 
     <div id="myId">
-        <!-- <line-chart :data="[['Jan', a], ['Feb', 2], ['Mar', 10], ['Apr', 5], ['May', 3]]"></line-chart> -->
-        <line-chart :data="chartData"></line-chart>
+        <line-chart :data="[['Jan', this.zero], ['Feb', this.oTwo], ['Mar', this.oThree], ['Apr', 5], ['May', 3]]"></line-chart>
+        <!-- <line-chart :data="chartData"></line-chart> -->
         <p> 00 : {{ zero }} </p>
         <p> 01 : {{ one }} </p>
         <p> 02 : {{ two }} </p>
@@ -49,7 +49,7 @@
     var vm = new Vue({
         el: '#myId',
         data: {
-            chartData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
+            // chartData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
             status: '',
             zero: 0,
             one: 0,
