@@ -368,4 +368,13 @@ export default {
   .label {
     color: red;
   }
+
+  @media (max-width: 900px) {
+    .vue-map-container{
+      height: 130vh !important;
+    }
+  }
+
+
+  /* vue-map-container */
 </style>

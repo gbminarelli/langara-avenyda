@@ -65,6 +65,7 @@ name:"form3Parking",
 </script>
 
 <style scoped>
+
   img.img-fluid {
     /* Some CSS is overwritting the images' height when we use the component on the home page */
     height: auto !important;
@@ -73,4 +74,5 @@ name:"form3Parking",
   .host-img {
     max-width: 200px;
   }
+
 </style>

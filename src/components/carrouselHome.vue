@@ -33,7 +33,7 @@
       <b-carousel-slide>
         <img
           slot="img"
-          class="d-block img-fluid w-100"
+          class="d-block img-fluid"
           width="1024"
           height="480"
           src="https://picsum.photos/1024/480/?image=55"
