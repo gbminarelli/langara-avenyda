@@ -65,13 +65,6 @@ name:"form3Parking",
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-<<<<<<< HEAD
-.formWidth{
- width: 85vw;
-padding-left: 2rem;
- padding: 1rem!important;
-}
 .congratsIMG{
     width: 8vw;
 }

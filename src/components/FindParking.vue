@@ -369,9 +369,13 @@ export default {
     color: red;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 750px) {
     .vue-map-container{
-      height: 130vh !important;
+      height: 60vh !important;
+    }
+    .searchParking{
+      position: relative;
+      max-height: 100%;
     }
   }
 
