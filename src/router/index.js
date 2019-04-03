@@ -104,9 +104,9 @@ export default new Router({
       component: ChartContainer
     },
     {
-      path: '/chartkick',
-      name: 'Chartkick',
-      component: Chartkick
+      path: '/chartbar',
+      name: 'ChartBar',
+      component: ChartBar
     }
   ]
 });
