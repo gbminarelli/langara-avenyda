@@ -42,7 +42,7 @@
         </b-row>
       </b-container>
     </b-row>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit="onSubmit">
       <b-row class="my-2">
         <b-col cols="8">
           <b-row>
@@ -51,11 +51,11 @@
             </b-col>
           </b-row>
           <b-row>
-            <b-col cols="8">
-              <b-form-input type="date" placeholder="12-03-19"/>
+            <b-col cols="7">
+              <b-form-input v-model="form.datetime.start.date" type="date"/>
             </b-col>
-            <b-col cols="4" class="pl-0">
-              <b-form-input type="time" placeholder="Time"/>
+            <b-col cols="5" class="pl-0">
+              <b-form-input v-model="form.datetime.start.time" type="time"/>
             </b-col>
           </b-row>
           <b-row>
@@ -64,11 +64,11 @@
             </b-col>
           </b-row>
           <b-row>
-            <b-col cols="8">
-              <b-form-input type="date" placeholder="12-03-19" />
+            <b-col cols="7">
+              <b-form-input v-model="form.datetime.end.date" type="date" />
             </b-col>
-            <b-col cols="4" class="pl-0">
-              <b-form-input type="time" placeholder="Time" />
+            <b-col cols="5" class="pl-0">
+              <b-form-input v-model="form.datetime.end.time" type="time" />
             </b-col>
           </b-row>
         </b-col>
@@ -103,35 +103,27 @@
         description:'This is a cozy room, with its own bathroom. Though the entrance to the house is shared, the position of the guest suite allows for privacy.',
         parkingInstructions:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         form: {
-          email: '',
-          name: '',
-          food: null,
-          checked: []
-        },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
+          datetime: {
+            start: {
+              date: null,
+              time: null
+            },
+            end: {
+              date: null,
+              time: null
+            }
+          }
+        }
       }
     },
     methods: {
-      confirmBooking() {
+      confirmBooking() {        
         this.$emit('confirm-spot');
+        this.$emit('datetime', this.form.datetime);
       },
       onSubmit(evt) {
         evt.preventDefault();
         // alert(JSON.stringify(this.form))
-      },
-      onReset(evt) {
-        evt.preventDefault();
-        /* Reset our form values */
-        this.form.email = '';
-        this.form.name = '';
-        this.form.food = null;
-        this.form.checked = [];
-        /* Trick to reset/clear native browser form validation state */
-        this.show = false;
-        this.$nextTick(() => {
-          this.show = true;
-        });
       }
     }
   }
@@ -164,5 +156,10 @@
   h2 {
     font-size: 1.3rem;
     font-weight: bold;
+  }
+
+  img.img-fluid {
+    /* Some CSS is overwritting the images' height when we use the component on the home page */
+    height: auto !important;
   }
 </style>
