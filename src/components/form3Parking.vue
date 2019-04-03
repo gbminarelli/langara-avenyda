@@ -66,6 +66,7 @@ name:"form3Parking",
 
 <style scoped>
 <<<<<<< HEAD
+<<<<<<< HEAD
 .formWidth{
  width: 85vw;
 padding-left: 2rem;
@@ -108,7 +109,6 @@ h2{
    .formWidth{
  width: 30vw;}
 }
-=======
   img.img-fluid {
     /* Some CSS is overwritting the images' height when we use the component on the home page */
     height: auto !important;
@@ -117,5 +117,5 @@ h2{
   .host-img {
     max-width: 200px;
   }
->>>>>>> 55bd7b4b6f1ed09e1c703a50f55a8f7db854363e
+
 </style>
