@@ -65,7 +65,43 @@ name:"form3Parking",
 </script>
 
 <style scoped>
+.congratsIMG{
+    width: 8vw;
+}
+.user{
+    width: 5vw;
+    height: 5vw;
+     margin-left: 1rem;
+}
+.alignleft{
+  text-align:left;
+  margin: 0;
+}
+.btnBt{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.topText{
+  font-size: 1rem;
+  margin: 0 !important;
+}
+h1{
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1.3rem;
+}
+.underlineAddress{
+  text-decoration: underline;
+}
+.hostColor{
+  color: #00E5FF;
+}
 
+@media (min-width: 900px) {
+   .formWidth{
+ width: 30vw;}
+}
   img.img-fluid {
     /* Some CSS is overwritting the images' height when we use the component on the home page */
     height: auto !important;

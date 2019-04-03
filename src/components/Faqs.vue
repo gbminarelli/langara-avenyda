@@ -11,7 +11,7 @@
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <b-btn block href="#" v-b-toggle.accordion1 variant="info"
-              >What is Avenyda?</b-btn
+              >How can I add my parking spot on the website?</b-btn
             >
           </b-card-header>
           <b-collapse
@@ -22,25 +22,22 @@
           >
             <b-card-body>
               <p class="card-text">
-                {{I start opened because <code>visible</code> is
-                <code>true</code>}}
+                Avenyda allows users to input their private parking spot on their own profile page where they have access to more information. It must be said that you will need to wait until we approve your parking spot after asking for some extra information for security. 
               </p>
-              <p class="card-text">
-                {{ text }}
-              </p>
+             
             </b-card-body>
           </b-collapse>
         </b-card>
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <b-btn block href="#" v-b-toggle.accordion2 variant="info"
-              >What is Avenyda?</b-btn
+              >Can I deny a parking spot reservation?</b-btn
             >
           </b-card-header>
           <b-collapse id="accordion2" accordion="my-accordion" role="tabpanel">
             <b-card-body>
               <p class="card-text">
-                {{ text }}
+                Yes and No, as an user of the application you can’t cancel a reservation but if there is a valid reason about your cancelation you can contact us, and we will contact the driver to let them know about the issue. 
               </p>
             </b-card-body>
           </b-collapse>
@@ -48,13 +45,13 @@
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <b-btn block href="#" v-b-toggle.accordion3 variant="info"
-              >What is Avenyda?</b-btn
+              >Am I protected against damage?</b-btn
             >
           </b-card-header>
           <b-collapse id="accordion3" accordion="my-accordion" role="tabpanel">
             <b-card-body>
               <p class="card-text">
-                {{ text }}
+                Yes, all the drivers have their information storage in our database and they digitally signed an agreement where they are fully responsible of any damage by their car. 
               </p>
             </b-card-body>
           </b-collapse>

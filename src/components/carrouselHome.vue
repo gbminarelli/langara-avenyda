@@ -22,7 +22,7 @@
 
       <!-- Slides with custom text -->
       <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
+        <h1>Avenyda.</h1>
       </b-carousel-slide>
 
       <!-- Slides with image only -->
