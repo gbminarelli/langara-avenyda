@@ -1,7 +1,7 @@
 <template>
   <div id="myId">
     <column-chart
-      :data="[['Sun', 4], ['Mon', this.monC], ['Tue', this.tueC], ['Wed', this.wedC], ['Thu', this.thuC], ['Fri', this.friC], ['Sat', this.satC]]"
+      :data="[['Sun', this.sunC], ['Mon', this.monC], ['Tue', this.tueC], ['Wed', this.wedC], ['Thu', this.thuC], ['Fri', this.friC], ['Sat', this.satC]]"
     ></column-chart>
 	<!-- {{ status }} -->
     <!-- <p>Monday : {{ monC }}</p>
