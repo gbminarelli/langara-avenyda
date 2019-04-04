@@ -6,6 +6,7 @@
       accordion="my-accordion3"
       role="tabpanel"
     >
+    
       <h2>Overview</h2>
 
       <div class="btnmenu">
@@ -14,9 +15,10 @@
         <b-button variant="light">MONTH</b-button>
         <b-button variant="light">YEAR</b-button>
       </div>
-
+<b-row>
+  <b-col col lg="5">
       <div class="totear">
-        <h1>$2K</h1>
+        <h1>104.50CAD</h1>
         <h5 style="padding-bottom: 20px">TOTAL EARNINGS</h5>
       </div>
 
@@ -24,12 +26,14 @@
         <h3>TOTAL HOURS WORKED</h3>
         <ChartPie />
       </div>
-
+  </b-col>
+  <b-col col lg="7">
       <div class="chartbar">
         <h3>USERS ANALYSIS</h3>
         <ChartBar />
       </div>
-
+  </b-col>
+</b-row>
       <div class="chartline">
         <h3>AVERAGE BOOKED BY USER</h3>
         <ChartLine />
@@ -89,9 +93,9 @@ export default {
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 3rem;
     margin-bottom: 0;
-    color: #00E5FF;
+    color: #1D3150;
     font-weight: bold;
   }
 
@@ -110,7 +114,7 @@ export default {
   }
 
   @media (min-width: 600px){
-    #dashboard1 {
+    /* #dashboard1 {
       display: grid;
       grid-template-columns: 1.5fr 3fr;
       grid-template-rows: 80px 70px .6fr 1fr 2fr;
@@ -144,7 +148,7 @@ export default {
     .chartline {
       grid-column: 1/3;
       grid-row: 5/6;
-    }
+    } */
   }
 
 </style>

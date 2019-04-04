@@ -2,19 +2,18 @@ export const planetChartDataPie = {
   type: "doughnut",
   data: {
     labels: [
-      'Red',
-      'Yellow',
-      'Blue'
+      'Hours Worked',
+      '',
     ],
     datasets: [
       {
         // one line graph
-        label: "Number of Moons",
-        data: [10, 20, 30],
+        label: "Total Hours Worked",
+        data: [10, 20],
         backgroundColor: [
-          "rgba(0, 255, 255, .9)"
+          "#1D3150"
         ],
-        borderColor: ["#00ffff"],
+        borderColor: ["#1D3150"],
         borderWidth: 3
       }
     ]
