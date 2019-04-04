@@ -33,12 +33,17 @@ export default {
 </script>
 
 <style>
+@import url("https://use.typekit.net/mjp8nel.css");
   #app {
-    font-family: acumin-pro, sans-serif;
+    font-family: acumin-pro, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #1D3150;
-    margin-top: 60px;
+    /* margin-top: 60px; */
+  }
+
+  .w-100{
+    height: 500px !important;
   }
 </style>

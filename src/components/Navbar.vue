@@ -1,5 +1,5 @@
 <template>
-   <b-navbar toggleable="lg" type="light" >
+   <b-navbar toggleable="lg" type="light" class="sticky-top" >
 
  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -12,7 +12,7 @@
     <b-navbar-nav>
       <b-nav-item href="#">HOW IT WORKS</b-nav-item>
       <b-nav-item href="#" @click="goFindParking">FIND PARKING</b-nav-item>
-      <b-nav-item href="#">LIST YOUR PARKING</b-nav-item>
+      <b-nav-item href="#" @click="goListParking">LIST YOUR PARKING</b-nav-item>
       <b-nav-item href="#" @click="goFaqs">FAQ</b-nav-item>
 
     </b-navbar-nav>
@@ -75,6 +75,9 @@ export default {
         goFaqs(){
             this.$router.push({ name: 'Faqs'})
         },
+        goListParking(){
+            this.$router.push({ name: 'ListParking'})
+        },
         goProfile(){
             this.$router.push({ name: 'Profile'})
         },
@@ -94,7 +97,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url("https://use.typekit.net/pwq4ktd.css");
 #app{
     margin-top:0;

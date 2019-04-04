@@ -14,6 +14,7 @@
         <h3>Marketing Management @Pepsi</h3>
         <p>"Finding a parking spot is easier now thanks to parking spot"</p>
     </div>
+    
 </div>
 </template>
 
@@ -35,6 +36,7 @@ export default {
     padding: 10px;
     position: relative;
     padding-top: 50px;
+    
 }
 .review h1{
 width: 30vw;

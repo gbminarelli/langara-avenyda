@@ -14,6 +14,11 @@ import FindParking from '@/components/FindParking'
 import reviewHome from '@/components/reviewHome'
 import Dashboard from '@/components/Dashboard'
 import NewSpot from '@/components/NewSpot'
+import ProfileB from '@/components/ProfileB'
+import form1Parking from'@/components/form1Parking'
+import form2Parking from'@/components/form2Parking'
+import form3Parking from'@/components/form3Parking'
+import MarkerWindow from'@/components/MarkerWindow'
 
 Vue.use(Router)
 
@@ -90,5 +95,31 @@ export default new Router({
       name: 'NewSpot',
       component: NewSpot
     },
+    {
+      path: '/listparking',
+      name: 'ListParking',
+      component: ProfileB
+    },
+    {
+      path: '/form1parking',
+      name: 'form1Parking',
+      component: form1Parking
+    },
+    {
+      path: '/form2parking',
+      name: 'form2Parking',
+      component: form2Parking
+    }
+    ,
+    {
+      path: '/form3parking',
+      name: 'form3Parking',
+      component: form3Parking
+    },
+    {
+      path: '/markerwindow',
+      name: 'MarkerWindow',
+      component: MarkerWindow
+    }
   ]
 });

@@ -88,6 +88,7 @@
     object-fit: cover;
     width: 100vw;
   }
+
   .one {
     font-family: acumin-pro, sans-serif;
     height: 87vh;
