@@ -2,6 +2,9 @@
   <div id="myId">
     <column-chart
       :data="[['Sun', this.sunC], ['Mon', this.monC], ['Tue', this.tueC], ['Wed', this.wedC], ['Thu', this.thuC], ['Fri', this.friC], ['Sat', this.satC]]"
+      :colors="['#1D3150']"
+      :download="true"
+      xtitle="Day of the week" ytitle="Bookings"
     ></column-chart>
 	<!-- {{ status }} -->
     <!-- <p>Monday : {{ monC }}</p>
