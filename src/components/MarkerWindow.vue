@@ -6,7 +6,7 @@
         <b-img rounded="0" v-bind="imageProps" thumbnail src="../assets/tyler-rutherford-1130939-unsplash.jpg" class="p-0 image-preview" />
       </b-col>
       <b-col class="pr-0 pl-2">
-        <p>${{price}}/hour </p>
+        <p>{{price}}CAD/hour </p>
         <p>12345 - 100th King Boulevard. Coquitlam, BC.</p>
         <p>⭐⭐⭐★★</p>
       </b-col>

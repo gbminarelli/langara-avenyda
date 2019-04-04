@@ -4,7 +4,7 @@
       :data="[['00:00', this.zero], ['01:00', this.one], ['02:00', this.two], ['03:00', this.three], ['04:00', this.four], ['05:00', this.five], ['06:00', this.six], ['07:00', this.seven], ['08:00', this.eight], ['09:00', this.nine],['10:00', this.oZero],['11:00', this.oOne],['12:00', this.oTwo],['13:00', this.oThree],['14:00', this.oFour],['15:00', this.oFive],['16:00', this.oSix],['17:00', this.oSeven],['18:00', this.oEight],['19:00', this.oNine],['20:00', this.tZero],['21:00', this.tOne],['22:00', this.tTwo],['23:00', this.tThree]]"
     ></line-chart>
 	
-    {{ status }}
+    <!-- {{ status }}
     <p>00 : {{ zero }}</p>
     <p>01 : {{ one }}</p>
     <p>02 : {{ two }}</p>
@@ -28,7 +28,7 @@
     <p>20 : {{ tZero }}</p>
     <p>21 : {{ tOne }}</p>
     <p>22 : {{ tTwo }}</p>
-    <p>23 : {{ tThree }}</p>
+    <p>23 : {{ tThree }}</p> -->
   </div>
 </template>
 

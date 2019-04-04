@@ -11,9 +11,9 @@ export const planetChartDataPie = {
         label: "Total Hours Worked",
         data: [10, 20],
         backgroundColor: [
-          "rgba(0, 255, 255, .9)"
+          "#1D3150"
         ],
-        borderColor: ["#00ffff"],
+        borderColor: ["#1D3150"],
         borderWidth: 3
       }
     ]
