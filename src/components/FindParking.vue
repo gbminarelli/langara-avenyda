@@ -9,7 +9,7 @@
       :center="center"
       :zoom="18"
       v-bind:options="mapStyle"
-      style="width:100%;  height: 90vh;">
+      style="width:100%;  height: 100vh;">
       <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <MarkerWindow :price="infoPrice" @book-spot="updateForm(1)" />
       </gmap-info-window>
@@ -357,7 +357,7 @@ export default {
     /* left: 10px;
     top:10px; */
     z-index: 1;
-    max-height: 90vh;
+    max-height: 100vh;
     width: 520px;
     /* width: 35vw; */
     /* overflow-y: scroll; */

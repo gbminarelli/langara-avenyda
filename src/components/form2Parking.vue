@@ -13,13 +13,13 @@
     </b-row>
     <b-row>
       <b-col>
-        <b-img  fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1" />
+        <b-img  fluid src="../assets/parkin1.jpeg" alt="Image 1" />
       </b-col>
       <b-col>
-        <b-img  fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2" />
+        <b-img  fluid src="../assets/asphalt.jpg" alt="Image 2" />
       </b-col>
       <b-col>
-        <b-img  fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3" />
+        <b-img  fluid src="../assets/tyler-rutherford-1130939-unsplash.jpg" alt="Image 3" />
       </b-col>
     </b-row>
     <b-row>
