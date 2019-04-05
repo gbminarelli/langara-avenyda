@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <b-collapse
-      id="dashboard1"
-      visible
-      accordion="my-accordion3"
-      role="tabpanel"
-    >
+    
     
       <h2>Overview</h2>
 
