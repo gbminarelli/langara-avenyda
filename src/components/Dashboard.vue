@@ -11,7 +11,7 @@
         <b-button variant="light">YEAR</b-button>
       </div>
 <b-row>
-  <b-col col lg="5">
+  <b-col col lg="5" >
       <div class="totear">
         <h1>104.50CAD</h1>
         <h5 style="padding-bottom: 20px">TOTAL EARNINGS</h5>
@@ -33,7 +33,7 @@
         <h3>AVERAGE BOOKED BY USER</h3>
         <ChartLine />
       </div>
-    </b-collapse>
+   
   </div>
 </template>
 
@@ -79,7 +79,8 @@ export default {
 
   .chartline {
     background-color: white;
-    margin: 15px;
+    margin:2rem;
+    padding-bottom: 1rem;
   }
 
   .totear {
