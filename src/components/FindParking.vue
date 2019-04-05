@@ -247,15 +247,15 @@ export default {
   computed: {
     markers: function() {
       return this.storedMarkers.map(e => {
-        let price = Math.floor(Math.random() * (500 - 100) + 100) / 100;
+        let price = Math.floor(Math.random() * (50 - 10) + 10) / 10;
         return {
           position: {
             lat: e.latitud,
             lng: e.longitud
           },
           label: {
-            text: `${price}`,
-            fontSize: "0.9rem",
+            text: `${price}CAD`,
+            fontSize: "13px",
             // color: "rgba(0, 0, 0, 0)"
             color: "#333"
           },
