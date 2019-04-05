@@ -2,9 +2,6 @@
   <div id="myId">
     <line-chart
       :data="[['00:00', this.zero], ['01:00', this.one], ['02:00', this.two], ['03:00', this.three], ['04:00', this.four], ['05:00', this.five], ['06:00', this.six], ['07:00', this.seven], ['08:00', this.eight], ['09:00', this.nine],['10:00', this.oZero],['11:00', this.oOne],['12:00', this.oTwo],['13:00', this.oThree],['14:00', this.oFour],['15:00', this.oFive],['16:00', this.oSix],['17:00', this.oSeven],['18:00', this.oEight],['19:00', this.oNine],['20:00', this.tZero],['21:00', this.tOne],['22:00', this.tTwo],['23:00', this.tThree]]"
-      :colors="['#1D3150']"
-      :download="true"
-      xtitle="Hour Of The Day" ytitle="Bookings"
     ></line-chart>
 	
     <!-- {{ status }}
@@ -193,86 +190,3 @@ export default {
 
 <style scoped>
 </style>
-// // getting hours from UTC Date
-//           function hr(p) {
-// 			var vm = this
-//             var hr = new Date(p);
-//             var utcHours = hr.getUTCHours();
-//             console.log(utcHours);
-
-//             //Counters....
-//             if (utcHours == "1") {
-//               vm.one++;
-//             }
-//             if (utcHours == "2") {
-//               vm.two++;
-//             }
-//             if (utcHours == "3") {
-//               vm.three++;
-//             }
-//             if (utcHours == "4") {
-//               vm.four++;
-//             }
-//             if (utcHours == "5") {
-//               vm.five++;
-//             }
-//             if (utcHours == "6") {
-//               vm.six++;
-//             }
-//             if (utcHours == "7") {
-//               vm.seven++;
-//             }
-//             if (utcHours == "8") {
-//               vm.eight++;
-//             }
-//             if (utcHours == "9") {
-//               vm.nine++;
-//             }
-//             if (utcHours == "10") {
-//               vm.oZero++;
-//             }
-//             if (utcHours == "11") {
-//               vm.oOne++;
-//             }
-//             if (utcHours == "12") {
-//               vm.oTwo++;
-//             }
-//             if (utcHours == "13") {
-//               vm.oThree++;
-//             }
-//             if (utcHours == "14") {
-//               vm.oFour++;
-//             }
-//             if (utcHours == "15") {
-//               vm.oFive++;
-//             }
-//             if (utcHours == "16") {
-//               vm.oSix++;
-//             }
-//             if (utcHours == "17") {
-//               vm.oSeven++;
-//             }
-//             if (utcHours == "18") {
-//               vm.oEight++;
-//             }
-//             if (utcHours == "19") {
-//               vm.oNine++;
-//             }
-//             if (utcHours == "20") {
-//               vm.tZero++;
-//             }
-//             if (utcHours == "21") {
-//               vm.tOne++;
-//               // var a = vm.tOne
-//             }
-//             if (utcHours == "22") {
-//               vm.tTwo++;
-//             }
-//             if (utcHours == "23") {
-//               vm.tThree++;
-//             }
-//             if (utcHours == "0") {
-//               vm.zero++;
-//             }
-//           }
-// 	  })
