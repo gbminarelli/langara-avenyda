@@ -2,6 +2,9 @@
   <div id="myId">
     <column-chart
       :data="[['Sun', this.sunC], ['Mon', this.monC], ['Tue', this.tueC], ['Wed', this.wedC], ['Thu', this.thuC], ['Fri', this.friC], ['Sat', this.satC]]"
+      :colors="['#1D3150']"
+      :download="true"
+      xtitle="Day of the week" ytitle="Bookings"
     ></column-chart>
 	<!-- {{ status }} -->
     <!-- <p>Monday : {{ monC }}</p>
@@ -18,9 +21,7 @@
 import Vue from "vue";
 import VueChartkick from "vue-chartkick";
 import Chart from "chart.js";
-
 Vue.use(VueChartkick, { adapter: Chart });
-
 const axios = require("axios");
 export default {
   name: "ChartBar",
@@ -45,18 +46,14 @@ export default {
 		.then(response => {
 			var info = response.data
 			console.log(info)
-
 			// converts json to a string
 			var my = JSON.stringify(info);
 			// console.log(my)
-
-
 			// splits the json according to the sign
           var sp = my.split('"');
           console.log(sp);
 		  console.log("Date Selection Begins....");
 		  
-
 		   // prints date element from array
           var j = 3;
           var f = 0;
@@ -64,7 +61,6 @@ export default {
           while (j <= sp.length) {
             console.log(sp[j]);
             // document.getElementById("myId").innerText = sp[j]
-
             this.myDate(sp[j]);
             j = j + 4;
           }
@@ -73,7 +69,6 @@ export default {
           vm.status = "An error occurred" + err;
         });
   },
-
   methods: {
     
     myDate: function(p) {
@@ -88,13 +83,10 @@ export default {
       days[5] = "Friday";
       days[6] = "Saturday";
       var r = days[a.getDay()];
-
       // console.log(r);
-
       this.smthng(r);
       // vm.status = final[f]
       // var s = final;
-
     //   return final;
     },
     smthng: function(r) {
@@ -105,7 +97,6 @@ export default {
       vm.status = final[f];
       console.log(vm.status);
       f += 1;
-
       //Counters
       if (vm.status == "Monday") {
         vm.monC++;
