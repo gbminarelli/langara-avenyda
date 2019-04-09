@@ -75,7 +75,7 @@
         <b-col cols="4" class="mt-4 text-center">
           <b-card class="shadowCard">
             <small class="mb-2">You will pay:</small>
-            <p class="mb-0 price">$4.50</p>
+            <p class="mb-0 price">${{price}}</p>
             <!-- <b-card-sub-title class="mb-2">You will pay:</b-card-sub-title> -->
             <!-- <b-card-title>4.50CAD</b-card-title> -->
           </b-card>
@@ -125,7 +125,8 @@
         evt.preventDefault();
         // alert(JSON.stringify(this.form))
       }
-    }
+    },
+    props: ['price']
   }
 </script>
 

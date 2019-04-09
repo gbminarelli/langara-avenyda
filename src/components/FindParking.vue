@@ -2,7 +2,7 @@
   <div class="map">
     <div class="searchParking">
       <form1Parking v-if="formFlag === 0" />
-      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)" @datetime="updateDatetime"/>
+      <form2Parking v-else-if="formFlag === 1" @confirm-spot="updateForm(2)" @datetime="updateDatetime" :price="infoPrice"/>
       <form3Parking v-else-if="formFlag === 2" :datetime="datetime" />
     </div>
     <gmap-map
